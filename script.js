@@ -447,7 +447,7 @@ async function showUPDetail(key, updateHash = true) {
         </p>
         <div class="pq-contact-block" style="background:#1a1a1a">
           <div class="label" style="color:#aaa">Contact Urban Pro</div>
-          <div class="name">Maxime Coze</div>
+          <div class="name">Mehdi Liakat</div>
           <a href="tel:0633631350" class="phone">06 33 63 13 50</a>
           <div class="sep">
             <a href="https://www.google.com/maps/search/?api=1&query=${d.maps.replace(/\+/g,'%20')}" target="_blank" class="maps-link" style="color:#aaa">→ Voir l'actif sur Google Maps</a>
@@ -644,7 +644,7 @@ function showDetail(key, updateHash = true) {
         <div class="pq-contact-block">
           <div class="label">Contact Braxton Logistics</div>
           <div class="name">Line Thomas</div>
-          <a href="tel:0633631350" class="phone">06 33 63 13 50</a>
+          <a href="tel:0683547709" class="phone">06 83 54 77 09</a>
           <div class="sep">
             <a href="https://www.google.com/maps/search/?api=1&query=${d.maps.replace(/\+/g,'%20')}" target="_blank" class="maps-link">→ Voir l'actif sur Google Maps</a>
           </div>
@@ -724,13 +724,13 @@ function showContact(updateHash = true) {
           </div>
           <div>
             <div style="font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px">Téléphone</div>
-            <a href="tel:0633631350" style="font-size:22px;font-weight:600;color:var(--dark);text-decoration:none;letter-spacing:.3px">06 33 63 13 50</a>
+            <a href="tel:0683547709" style="font-size:22px;font-weight:600;color:var(--dark);text-decoration:none;letter-spacing:.3px">06 83 54 77 09</a>
           </div>
           <div>
             <div style="font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px">Email</div>
             <a href="mailto:line@braxtonam.com" style="font-size:15px;font-weight:400;color:var(--dark);text-decoration:none">line@braxtonam.com</a>
           </div>
-          <a href="tel:0633631350" style="margin-top:4px;display:block;background:var(--dark);color:#fff;text-align:center;padding:12px;font-size:12px;font-weight:500;letter-spacing:.8px;text-decoration:none;text-transform:uppercase;transition:background .2s" onmouseover="this.style.background='#DDA73C'" onmouseout="this.style.background='#005F52'">Appeler →</a>
+          <a href="tel:0683547709" style="margin-top:4px;display:block;background:var(--dark);color:#fff;text-align:center;padding:12px;font-size:12px;font-weight:500;letter-spacing:.8px;text-decoration:none;text-transform:uppercase;transition:background .2s" onmouseover="this.style.background='#DDA73C'" onmouseout="this.style.background='#005F52'">Appeler →</a>
         </div>
       </div>
 
@@ -742,8 +742,8 @@ function showContact(updateHash = true) {
         </div>
         <div style="padding:28px 24px;display:flex;flex-direction:column;gap:20px">
           <div>
-            <div style="font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px">Contacts</div>
-            <div style="font-size:15px;font-weight:400;color:var(--text)">Mehdi Liakat &amp; Maxime</div>
+            <div style="font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px">Contact</div>
+            <div style="font-size:15px;font-weight:400;color:var(--text)">Mehdi Liakat</div>
           </div>
           <div>
             <div style="font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px">Téléphone</div>
@@ -751,19 +751,11 @@ function showContact(updateHash = true) {
           </div>
           <div>
             <div style="font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px">Email</div>
-            <div style="display:flex;flex-direction:column;gap:8px">
-              <a href="mailto:mehdi@braxtonam.com" style="font-size:14px;font-weight:400;color:#1a1a1a;text-decoration:none;display:flex;align-items:center;gap:8px">
-                <span style="width:6px;height:6px;background:#1a1a1a;flex-shrink:0"></span>mehdi@braxtonam.com
-              </a>
-              <a href="mailto:maxime@braxtonam.com" style="font-size:14px;font-weight:400;color:#1a1a1a;text-decoration:none;display:flex;align-items:center;gap:8px">
-                <span style="width:6px;height:6px;background:#1a1a1a;flex-shrink:0"></span>maxime@braxtonam.com
-              </a>
-            </div>
+            <a href="mailto:mehdi@braxtonam.com" style="font-size:14px;font-weight:400;color:#1a1a1a;text-decoration:none;display:flex;align-items:center;gap:8px">
+              <span style="width:6px;height:6px;background:#1a1a1a;flex-shrink:0"></span>mehdi@braxtonam.com
+            </a>
           </div>
-          <div style="display:flex;gap:10px;margin-top:4px">
-            <a href="mailto:mehdi@braxtonam.com" style="flex:1;display:block;background:#1a1a1a;color:#fff;text-align:center;padding:12px;font-size:12px;font-weight:500;letter-spacing:.8px;text-decoration:none;text-transform:uppercase;transition:background .2s" onmouseover="this.style.background='#444'" onmouseout="this.style.background='#1a1a1a'">Mehdi →</a>
-              <a href="mailto:maxime@braxtonam.com" style="flex:1;display:block;background:#1a1a1a;color:#fff;text-align:center;padding:12px;font-size:12px;font-weight:500;letter-spacing:.8px;text-decoration:none;text-transform:uppercase;transition:background .2s" onmouseover="this.style.background='#444'" onmouseout="this.style.background='#1a1a1a'">Maxime →</a>
-          </div>
+          <a href="mailto:mehdi@braxtonam.com" style="margin-top:4px;display:block;background:#1a1a1a;color:#fff;text-align:center;padding:12px;font-size:12px;font-weight:500;letter-spacing:.8px;text-decoration:none;text-transform:uppercase;transition:background .2s" onmouseover="this.style.background='#444'" onmouseout="this.style.background='#1a1a1a'">Contacter Mehdi →</a>
         </div>
       </div>
 

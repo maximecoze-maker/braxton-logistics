@@ -18,7 +18,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--offwhite); color: v
 /* HEADER */
 header { background: var(--dark); position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--teal); }
 .header-inner { max-width: 1280px; margin: 0 auto; padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; cursor: pointer; }
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; cursor: pointer; background: none; border: none; padding: 0; font-family: inherit; }
 .logo-mark { width: 36px; height: 36px; background: var(--teal); display: flex; align-items: center; justify-content: center; clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%); }
 .logo-mark span { color: var(--white); font-weight: 600; font-size: 15px; }
 .logo-text { color: var(--white); font-weight: 500; font-size: 15px; letter-spacing: .8px; }
@@ -65,7 +65,7 @@ header { background: var(--dark); position: sticky; top: 0; z-index: 100; border
 .card-address { color: var(--text-muted); font-size: 13px; font-weight: 200; margin-bottom: 18px; display: flex; align-items: flex-start; gap: 7px; flex: 1; }
 .card-address svg { flex-shrink: 0; margin-top: 2px; color: var(--teal-light); }
 .card-footer { border-top: 1px solid #EEF3F3; padding-top: 14px; display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
-.card-link { font-size: 12px; font-weight: 500; color: var(--teal); letter-spacing: .5px; display: flex; align-items: center; gap: 5px; transition: gap .15s; }
+.card-link { font-size: 12px; font-weight: 500; color: var(--teal); letter-spacing: .5px; display: flex; align-items: center; gap: 5px; transition: gap .15s; background: none; border: none; padding: 0; font-family: inherit; cursor: pointer; }
 .card:hover .card-link { gap: 9px; }
 .available-dot { width: 7px; height: 7px; background: var(--green); border-radius: 50%; }
 .available-label { font-size: 11px; color: var(--green); font-weight: 400; }
@@ -122,17 +122,6 @@ header { background: var(--dark); position: sticky; top: 0; z-index: 100; border
 .pq-specs-table td:first-child { color: var(--text-muted); font-weight: 200; width: 52%; line-height: 1.4; }
 .pq-specs-table td:last-child { font-weight: 500; color: var(--text); text-align: right; }
 .pq-specs-table tr:nth-child(even) td { background: #EEF3F3; }
-
-/* Financial box */
-.pq-finance-box { background: var(--dark); margin-top: 12px; }
-.pq-finance-box-header { padding: 10px 16px; border-bottom: 1px solid rgba(74,107,107,.4); }
-.pq-finance-box-header h4 { color: var(--teal-pale); font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; }
-.pq-finance-table { width: 100%; border-collapse: collapse; }
-.pq-finance-table tr { border-bottom: 1px solid rgba(74,107,107,.25); }
-.pq-finance-table tr:last-child { border-bottom: none; }
-.pq-finance-table td { padding: 9px 14px; font-size: 13px; }
-.pq-finance-table td:first-child { color: var(--teal-light); font-weight: 200; }
-.pq-finance-table td:last-child { font-weight: 600; color: var(--white); text-align: right; }
 
 /* Right: description */
 .pq-desc-box { }

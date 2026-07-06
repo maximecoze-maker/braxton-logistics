@@ -263,9 +263,9 @@ function renderCards(filter) {
             <div class="available-dot"></div><span class="available-label">Disponible</span>
           </div>
           ${hasIM
-            ? `<span class="card-link" onclick="showDetail('${a.imKey}')">Voir la fiche →</span>`
+            ? `<button type="button" class="card-link" onclick="showDetail('${a.imKey}')">Voir la fiche →</button>`
             : a.upKey
-              ? `<span class="card-link" onclick="showUPDetail('${a.upKey}')">Voir les cellules →</span>`
+              ? `<button type="button" class="card-link" onclick="showUPDetail('${a.upKey}')">Voir les cellules →</button>`
               : `<a class="card-link" href="https://www.google.com/maps/search/?api=1&query=${mapsQ}" target="_blank">Voir sur Maps →</a>`
           }
         </div>
@@ -339,9 +339,10 @@ const upAssetsDataLoaded = fetch('data/up-assets.json')
   .catch(err => console.error('Could not load data/up-assets.json:', err));
 
 // ── URBAN PRO DETAIL PAGE ──
-async function showUPDetail(key) {
+async function showUPDetail(key, updateHash = true) {
   const d = upAssets[key];
   if (!d) return;
+  if (updateHash) updateURL(`urbanpro/${key}`);
   if (!d.cells) await upAssetsDataLoaded;
   const badge = badgeMap[d.region];
   const mapSrc = `https://maps.google.com/maps?q=${d.maps}&output=embed`;
@@ -488,9 +489,10 @@ function occClass(occ) {
   return 'occ-low';
 }
 
-function showDetail(key) {
+function showDetail(key, updateHash = true) {
   const d = imAssets[key];
   if (!d) return;
+  if (updateHash) updateURL(`actif/${key}`);
   const badge = badgeMap[d.region];
   const mapSrc = `https://maps.google.com/maps?q=${d.maps}&output=embed`;
   const esgLabel = d.esg === '—' ? 'Non certifié' : d.esg;
@@ -666,7 +668,8 @@ function showDetail(key) {
   window.scrollTo(0, 0);
 }
 
-function showListing() {
+function showListing(updateHash = true) {
+  if (updateHash) updateURL('');
   document.getElementById('detail-view').classList.remove('active');
   document.getElementById('detail-view').innerHTML = '';
   document.getElementById('listing-view').classList.remove('hidden');
@@ -676,7 +679,8 @@ function showListing() {
 }
 
 // ── PAGE CONTACT ──
-function showContact() {
+function showContact(updateHash = true) {
+  if (updateHash) updateURL('contact');
   const cv = document.getElementById('contact-view');
   cv.style.display = 'block';
   document.getElementById('listing-view').classList.add('hidden');
@@ -848,7 +852,7 @@ function initMap() {
         ? `showUPDetail('${a.upKey}')`
         : null;
     const cityHTML = hasPage
-      ? `<div class="map-popup-city" style="cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#4B6B6B" onclick="${clickFn}">${displayCity} →</div>`
+      ? `<button type="button" class="map-popup-city" style="cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#4B6B6B;background:none;border:none;padding:0;font-family:inherit;display:block" onclick="${clickFn}">${displayCity} →</button>`
       : `<div class="map-popup-city">${displayCity}</div>`;
     const popup = `${cityHTML}
       <div class="map-popup-addr">${a.address}<br>${a.cp} ${a.city}</div>
@@ -873,5 +877,28 @@ function initMap() {
   map.setView([48.8566, 2.3522], 10);
 }
 
-// Init map when DOM ready (listing view visible)
-document.addEventListener('DOMContentLoaded', initMap);
+// ══════════════════════════════════════
+// STATS (dérivées des données, jamais codées en dur)
+// ══════════════════════════════════════
+document.getElementById('stat-total').textContent = assets.length;
+document.getElementById('stat-im').textContent = Object.keys(imAssets).length;
+document.getElementById('stat-up').textContent = Object.keys(upAssets).length;
+
+// ══════════════════════════════════════
+// ROUTING — liens partageables + bouton précédent du navigateur
+// ══════════════════════════════════════
+function updateURL(hash) {
+  const url = hash ? `#${hash}` : location.pathname + location.search;
+  history.pushState({ hash }, '', url);
+}
+
+function routeFromLocation() {
+  const hash = location.hash.slice(1);
+  if (hash.startsWith('actif/')) showDetail(decodeURIComponent(hash.slice(6)), false);
+  else if (hash.startsWith('urbanpro/')) showUPDetail(decodeURIComponent(hash.slice(9)), false);
+  else if (hash === 'contact') showContact(false);
+  else showListing(false);
+}
+
+window.addEventListener('popstate', routeFromLocation);
+document.addEventListener('DOMContentLoaded', routeFromLocation);

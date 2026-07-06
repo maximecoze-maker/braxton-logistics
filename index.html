@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Braxton Logistics</title>
+  <meta name="description" content="Braxton Logistics — portefeuille d'entrepôts et locaux d'activité disponibles à la location en Île-de-France, PACA, Bordeaux et Bourgogne." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath fill='%234B6B6B' d='M0 0h36v25.2L25.2 36H0z'/%3E%3Ctext x='11' y='23' font-family='Arial,sans-serif' font-size='18' font-weight='700' fill='white'%3EB%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -14,10 +16,10 @@
 
 <header>
   <div class="header-inner">
-    <div class="logo" onclick="showListing()">
+    <button class="logo" onclick="showListing()" aria-label="Retour à l'accueil">
       <div class="logo-mark"><span>B</span></div>
       <span class="logo-text">BRAXTON <em>LOGISTICS</em></span>
-    </div>
+    </button>
     <button class="header-cta" onclick="showContact()">Nous contacter</button>
   </div>
 </header>
@@ -30,9 +32,9 @@
       <h1>Des entrepôts &amp; locaux d'activité <strong>bien situés,<br>prêts à l'usage.</strong></h1>
       <p>Braxton Logistics propose un portefeuille d'actifs logistiques et urbains sélectionnés pour leur accessibilité, leur emplacement et leur qualité opérationnelle.</p>
       <div class="hero-stats">
-        <div class="stat"><div class="stat-num">25</div><div class="stat-label">Actifs disponibles</div></div>
-        <div class="stat"><div class="stat-num">10</div><div class="stat-label">Fiches techniques complètes</div></div>
-        <div class="stat"><div class="stat-num">9</div><div class="stat-label">Parcs Urban Pro</div></div>
+        <div class="stat"><div class="stat-num" id="stat-total"></div><div class="stat-label">Actifs disponibles</div></div>
+        <div class="stat"><div class="stat-num" id="stat-im"></div><div class="stat-label">Fiches techniques complètes</div></div>
+        <div class="stat"><div class="stat-num" id="stat-up"></div><div class="stat-label">Parcs Urban Pro</div></div>
       </div>
     </div>
   </section>

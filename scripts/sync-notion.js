@@ -18,19 +18,18 @@ if (!NOTION_TOKEN) {
   process.exit(1);
 }
 
-// asset slug -> "Etat locatif" database id (from Notion)
-// Note: morangis-up and corbeil-up currently share the same (unconfigured) database
-// in Notion — see project notes. Once distinct tables exist for each, update the ids below.
+// asset slug -> "Etat locatif" database id (from Notion, under each deal's page
+// in the "Investment Pipeline" > "Global View" structure)
 const ASSETS = {
-  'valenton-up':  'ada42bb1-1184-4eb7-806e-8306c665526b',
-  'epinay-up':    'be163a6c-a3c2-4b3b-a774-5d80f8b9a362',
-  'marseille-up': '901ffb26-3746-480a-bd4f-84eed3f0edce',
-  'bagnolet-up':  '5653dec0-d611-462a-9c43-eafc51b704ed',
-  'neuilly-up':   '1c40875d-7e8a-4504-8b60-c61bf0ea7930',
-  'morangis-up':  '74d6f709-5d02-4cbb-aee1-965b30cadd45',
-  'corbeil-up':   '74d6f709-5d02-4cbb-aee1-965b30cadd45',
-  'eguilles-up':  '78654958-5af9-4c23-8460-362cdb5841ef',
-  'gradignan-up': '4eee40d7-d33c-448f-b953-f030010137e6',
+  'valenton-up':  'a9d8acb2-ed1a-82b1-9a6c-0746f77febe7',
+  'epinay-up':    '6718acb2-ed1a-82f4-8a7c-8750257f16da',
+  'marseille-up': '1048acb2-ed1a-8387-a45c-8715bbad6d5c',
+  'bagnolet-up':  '1ca8acb2-ed1a-8208-a1da-87346bd96396',
+  'neuilly-up':   '6d58acb2-ed1a-8345-acf3-87dd7b129551',
+  'morangis-up':  '98d8acb2-ed1a-8370-8e6e-8746dbc6d458',
+  'corbeil-up':   'dd58acb2-ed1a-83d3-98ed-07b7948ca060',
+  'eguilles-up':  '95e8acb2-ed1a-837a-9e68-07861eec701d',
+  'gradignan-up': 'dea8acb2-ed1a-8230-8c75-87e2f1e8a32f',
 };
 
 async function queryDatabase(databaseId) {
@@ -69,6 +68,15 @@ function richText(prop) {
 function numberVal(prop) {
   return typeof prop?.number === 'number' ? prop.number : null;
 }
+// "Loyer mensuel" is a text field (e.g. "1 579", using a regular or non-breaking space
+// as thousands separator), not a Notion number property - parse it out here.
+function textNumberVal(prop) {
+  const text = richText(prop);
+  if (!text) return null;
+  const cleaned = text.replace(',', '.').replace(/[^\d.]/g, '');
+  const n = parseFloat(cleaned);
+  return Number.isNaN(n) ? null : n;
+}
 
 function buildCell(page) {
   const p = page.properties;
@@ -76,7 +84,7 @@ function buildCell(page) {
   const rdc = numberVal(getProp(p, 'Surface RDC'));
   const mezz = numberVal(getProp(p, 'Surface Mezzanine'));
   const locataire = richText(getProp(p, 'Locataire'));
-  const loyerMensuel = numberVal(getProp(p, 'Loyer mensuel', 'Loyer Mensuel'));
+  const loyerMensuel = textNumberVal(getProp(p, 'Loyer mensuel', 'Loyer Mensuel'));
   const commentaires = richText(getProp(p, 'Commentaires'));
 
   const isVacant = locataire === '' || locataire.toLowerCase() === 'vacant';

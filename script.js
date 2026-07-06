@@ -389,10 +389,7 @@ async function showUPDetail(key, updateHash = true) {
           }).join('')}
         </tbody>
       </table>
-    </div>
-    <p style="font-size:11px;color:var(--text-muted);font-weight:400;margin-bottom:40px">
-      Loyer mensuel indiqué HT HC — 180 €/m²/an pour Valenton. Disponibilité : immédiat ou date prévisionnelle.
-    </p>` : `
+    </div>` : `
     <div style="background:var(--offwhite);border:1px solid #DCE8E8;padding:32px;text-align:center;margin-bottom:40px">
       <p style="font-size:13px;color:var(--text-muted);font-weight:400">État locatif détaillé à venir pour cet actif.</p>
     </div>`;

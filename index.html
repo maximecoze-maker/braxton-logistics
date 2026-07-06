@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Braxton Logistics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo" onclick="showListing()">
+      <div class="logo-mark"><span>B</span></div>
+      <span class="logo-text">BRAXTON <em>LOGISTICS</em></span>
+    </div>
+    <button class="header-cta" onclick="showContact()">Nous contacter</button>
+  </div>
+</header>
+
+<!-- ══ LISTING VIEW ══ -->
+<div class="listing-view" id="listing-view">
+  <section class="hero">
+    <div class="hero-inner">
+      <img src="logo-braxton.png" alt="Braxton Asset Management" style="height:52px;margin-bottom:24px;filter:brightness(0) invert(1);" />
+      <h1>Des entrepôts &amp; locaux d'activité <strong>bien situés,<br>prêts à l'usage.</strong></h1>
+      <p>Braxton Logistics propose un portefeuille d'actifs logistiques et urbains sélectionnés pour leur accessibilité, leur emplacement et leur qualité opérationnelle.</p>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">25</div><div class="stat-label">Actifs disponibles</div></div>
+        <div class="stat"><div class="stat-num">10</div><div class="stat-label">Fiches techniques complètes</div></div>
+        <div class="stat"><div class="stat-num">9</div><div class="stat-label">Parcs Urban Pro</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPLIT LAYOUT : listing gauche + carte droite -->
+  <div class="split-layout">
+
+    <!-- COLONNE GAUCHE : filtres + grille -->
+    <div class="split-listing">
+      <div class="filters-section">
+        <h2>Filtrer par zone</h2>
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">Tous les actifs</button>
+          <button class="filter-btn" data-filter="idf">Île-de-France</button>
+          <button class="filter-btn" data-filter="paca">PACA</button>
+          <button class="filter-btn" data-filter="bordeaux">Bordeaux</button>
+          <button class="filter-btn" data-filter="bourgogne">Bourgogne</button>
+          <button class="filter-btn filter-btn-up" data-filter="urbanpro">
+            <svg width="13" height="11" viewBox="0 0 39 30" fill="currentColor" style="margin-right:5px;vertical-align:middle"><path d="M2 28V14L8 6l6 8V28H2zm10 0V10l9-10 9 10V28H12zm16 0V14l6-8 6 8V28H28z"/></svg>Urban Pro
+          </button>
+        </div>
+      </div>
+      <div class="count-bar"><span><strong id="visible-count">25</strong> actifs affichés</span></div>
+      <main class="grid" id="assets-grid"></main>
+    </div>
+
+    <!-- COLONNE DROITE : carte sticky -->
+    <div class="split-map">
+      <div class="map-legend-bar">
+        <div class="legend-item"><div class="legend-dot-up"></div>Urban Pro</div>
+        <div class="legend-item"><div class="legend-dot-bl"></div>Braxton Logistics</div>
+      </div>
+      <div id="assets-map"></div>
+    </div>
+
+  </div>
+
+  <div id="contact-anchor"></div>
+  <section class="contact-section">
+    <div class="contact-inner">
+      <div class="contact-text">
+        <h2>Intéressé par<br>un de nos <strong>actifs ?</strong></h2>
+        <p>Notre équipe est disponible pour vous présenter les sites, organiser des visites et répondre à vos questions sur les conditions de location.</p><br/>
+        <p>📍 Braxton Asset Management — Paris, France</p>
+      </div>
+      <div class="contact-cta-block">
+        <a class="phone" href="tel:0633631350">06 33 63 13 50</a>
+        <a class="email" href="mailto:line@braxtonam.com">line@braxtonam.com</a>
+        <a class="btn" href="tel:0633631350">Appeler →</a>
+      </div>
+    </div>
+  </section>
+  <footer><p>© 2025 <strong>Braxton Asset Management</strong> — Tous droits réservés. Document confidentiel, non contractuel.</p></footer>
+</div>
+
+<!-- ══ DETAIL VIEW ══ -->
+<div id="detail-view"></div>
+<div id="contact-view" style="display:none;min-height:100vh;background:var(--offwhite)"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -250,7 +250,7 @@ function renderCards(filter) {
         <div class="card-header">
           <div>
             <div class="card-city">${displayCity}</div>
-            <div style="margin-top:5px;display:flex;gap:5px;flex-wrap:wrap">
+            <div class="card-badges">
               ${isUP ? `<span class="up-badge">${upLogoSVG} Urban Pro</span>` : ''}
               ${a.underConstruction ? '<span class="construction-badge">En cours de construction</span>' : ''}
               ${hasIM ? '<span class="im-pill">FICHE TECHNIQUE</span>' : ''}

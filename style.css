@@ -59,7 +59,8 @@ header { background: var(--dark); position: sticky; top: 0; z-index: 100; border
 .card-accent { height: 4px; background: var(--teal); }
 .card-body { padding: 22px 24px 20px; display: flex; flex-direction: column; flex: 1; }
 .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
-.card-city { font-family: var(--font-head); font-size: 16px; font-weight: 600; color: var(--text); }
+.card-city { font-family: var(--font-head); font-size: 16px; font-weight: 600; color: var(--text); line-height: 1.3; min-height: 2.6em; }
+.card-badges { margin-top: 5px; display: flex; gap: 5px; flex-wrap: wrap; min-height: 45px; align-content: flex-start; }
 .card-badge { font-size: 10px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; white-space: nowrap; }
 .badge-idf   { background: var(--teal-pale); color: var(--dark2); }
 .badge-paca  { background: #FDE8C8; color: #A0590A; }
@@ -72,13 +73,14 @@ header { background: var(--dark); position: sticky; top: 0; z-index: 100; border
 .card:hover .card-link { gap: 9px; }
 .available-dot { width: 7px; height: 7px; background: var(--green); border-radius: 50%; }
 .available-label { font-size: 11px; color: var(--green); font-weight: 400; }
-.im-pill { font-size: 9px; background: var(--dark); color: var(--teal-pale); padding: 2px 7px; font-weight: 500; letter-spacing: .8px; }
-.construction-badge { font-size: 9px; background: #FDE8C8; color: #A0590A; padding: 2px 7px; font-weight: 500; letter-spacing: .5px; text-transform: uppercase; }
+.up-badge, .im-pill, .construction-badge { display: inline-flex; align-items: center; height: 20px; box-sizing: border-box; font-size: 9px; font-weight: 600; letter-spacing: .5px; text-transform: uppercase; padding: 0 8px; white-space: nowrap; }
+.im-pill { background: var(--dark); color: var(--teal-pale); }
+.construction-badge { background: #FDE8C8; color: #A0590A; }
 .filter-btn-up { border-color: #1a1a1a !important; color: #1a1a1a !important; font-weight: 500; display: flex; align-items: center; }
 .filter-btn-up:hover, .filter-btn-up.active { background: #1a1a1a !important; border-color: #1a1a1a !important; color: #fff !important; }
 .up-logo-icon { height: 16px; width: auto; display: block; }
 .filter-btn-up:hover .up-logo-icon, .filter-btn-up.active .up-logo-icon { filter: invert(1); }
-.up-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 9px; font-weight: 600; letter-spacing: .5px; background: #1a1a1a; color: #fff; padding: 3px 8px; text-transform: uppercase; }
+.up-badge { gap: 5px; background: #1a1a1a; color: #fff; }
 .up-badge .up-logo-icon { height: 10px; filter: invert(1); }
 
 /* ── DETAIL VIEW — style plaquette ── */

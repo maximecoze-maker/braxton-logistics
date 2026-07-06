@@ -659,7 +659,7 @@ function showDetail(key, updateHash = true) {
         <div style="width:28px;height:28px;background:var(--teal);display:flex;align-items:center;justify-content:center;clip-path:polygon(0 0,100% 0,100% 70%,70% 100%,0 100%)"><span style="color:#fff;font-weight:600;font-size:12px">B</span></div>
         <span style="color:var(--white);font-size:12px;font-weight:400;letter-spacing:1px">BRAXTON <span style="color:var(--teal-light)">LOGISTICS</span></span>
       </div>
-      <span style="font-size:11px;color:var(--teal-light);font-weight:400">Document confidentiel — Non contractuel — © 2025 Braxton Asset Management</span>
+      <span style="font-size:11px;color:var(--teal-light);font-weight:400">Document confidentiel — Non contractuel — © 2026 Braxton Asset Management</span>
     </div>
   `;
 
@@ -774,7 +774,7 @@ function showContact(updateHash = true) {
         <div style="width:28px;height:28px;background:var(--teal);display:flex;align-items:center;justify-content:center;clip-path:polygon(0 0,100% 0,100% 70%,70% 100%,0 100%)"><span style="color:#fff;font-weight:600;font-size:12px">B</span></div>
         <span style="color:var(--white);font-size:12px;font-weight:400;letter-spacing:1px">BRAXTON <span style="color:var(--teal-light)">ASSET MANAGEMENT</span></span>
       </div>
-      <span style="font-size:11px;color:var(--teal-light);font-weight:400">© 2025 Braxton Asset Management</span>
+      <span style="font-size:11px;color:var(--teal-light);font-weight:400">© 2026 Braxton Asset Management</span>
     </div>
   `;
 }

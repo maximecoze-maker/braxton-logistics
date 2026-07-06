@@ -373,11 +373,11 @@ async function showUPDetail(key, updateHash = true) {
               ? `<span style="display:inline-block;padding:3px 10px;font-size:11px;font-weight:500;background:#E8F6EE;color:#1A7A44">Occupé</span>`
               : `<span style="display:inline-block;padding:3px 10px;font-size:11px;font-weight:500;background:#FEE8E8;color:#C0392B">Vacant</span>`;
             const loyerCell = c.status === 'vacant' && c.loyer
-              ? `<span style="font-weight:600;color:var(--teal)">${new Intl.NumberFormat('fr-FR').format(c.loyer)} €/mois</span>`
-              : `<span style="color:var(--text-muted);font-weight:200">—</span>`;
+              ? `<span style="font-weight:600;color:var(--dark)">${new Intl.NumberFormat('fr-FR').format(c.loyer)} €/mois</span>`
+              : `<span style="color:var(--text-muted);font-weight:400">—</span>`;
             const dispoCell = c.status === 'vacant'
               ? `<span style="font-size:11px;font-weight:500;color:${c.dispo && c.dispo.includes('.')? '#C47D0A':'var(--green)'}">${c.dispo || '—'}</span>`
-              : `<span style="font-size:11px;font-weight:200;color:var(--text-muted)">—</span>`;
+              : `<span style="font-size:11px;font-weight:400;color:var(--text-muted)">—</span>`;
             return `<tr class="${c.status === 'vacant' ? 'vacant-row' : ''}">
               <td style="font-weight:600">Cellule ${c.num}</td>
               <td>${c.rdc}</td><td>${c.r1}</td>
@@ -390,11 +390,11 @@ async function showUPDetail(key, updateHash = true) {
         </tbody>
       </table>
     </div>
-    <p style="font-size:11px;color:var(--text-muted);font-weight:200;margin-bottom:40px">
+    <p style="font-size:11px;color:var(--text-muted);font-weight:400;margin-bottom:40px">
       Loyer mensuel indiqué HT HC — 180 €/m²/an pour Valenton. Disponibilité : immédiat ou date prévisionnelle.
     </p>` : `
     <div style="background:var(--offwhite);border:1px solid #DCE8E8;padding:32px;text-align:center;margin-bottom:40px">
-      <p style="font-size:13px;color:var(--text-muted);font-weight:200">État locatif détaillé à venir pour cet actif.</p>
+      <p style="font-size:13px;color:var(--text-muted);font-weight:400">État locatif détaillé à venir pour cet actif.</p>
     </div>`;
 
   const html = `
@@ -402,7 +402,7 @@ async function showUPDetail(key, updateHash = true) {
       <div class="detail-cover-inner">
         <div class="detail-nav">
           <button class="back-btn" onclick="showListing()">← Retour au portefeuille</button>
-          <span style="font-size:11px;color:var(--teal-light);font-weight:200;letter-spacing:1px">URBAN PRO · ÉTAT LOCATIF</span>
+          <span style="font-size:11px;color:var(--teal-light);font-weight:400;letter-spacing:1px">URBAN PRO · ÉTAT LOCATIF</span>
         </div>
         <div class="detail-cover-body">
           <div class="detail-cover-text">
@@ -442,7 +442,7 @@ async function showUPDetail(key, updateHash = true) {
         <div class="pq-section-title">Contacter Urban Pro</div>
       </div>
       <div style="max-width:420px;margin-bottom:60px">
-        <p style="font-size:13px;font-weight:200;color:var(--text-muted);line-height:1.7;margin-bottom:24px">
+        <p style="font-size:13px;font-weight:400;color:var(--text-muted);line-height:1.7;margin-bottom:24px">
           Pour visiter les cellules disponibles et connaître les conditions de location Urban Pro, contactez notre équipe.
         </p>
         <div class="pq-contact-block" style="background:#1a1a1a">
@@ -462,9 +462,9 @@ async function showUPDetail(key, updateHash = true) {
           <svg width="12" height="10" viewBox="0 0 42 32" fill="white"><path d="M1 31V15L8 5l7 10V31H1zm12 0V9l10-9 10 9V31H13zm18 0V15l7-10 7 10V31H31z"/></svg>
           <span style="color:#fff;font-size:10px;font-weight:600;letter-spacing:1px">URBAN PRO</span>
         </div>
-        <span style="color:var(--teal-light);font-size:11px;font-weight:200">by Braxton Asset Management</span>
+        <span style="color:var(--teal-light);font-size:11px;font-weight:400">by Braxton Asset Management</span>
       </div>
-      <span style="font-size:11px;color:var(--teal-light);font-weight:200">Document confidentiel — Non contractuel</span>
+      <span style="font-size:11px;color:var(--teal-light);font-weight:400">Document confidentiel — Non contractuel</span>
     </div>`;
 
   const dv = document.getElementById('detail-view');
@@ -536,7 +536,7 @@ function showDetail(key, updateHash = true) {
       <td style="font-weight:600">Cellule ${i+1}</td>
       <td>${t.gla}</td>
       <td>${statusPill}</td>
-      <td style="color:var(--teal);font-weight:500;font-size:12px">Nous consulter</td>
+      <td style="color:var(--dark);font-weight:500;font-size:12px">Nous consulter</td>
     </tr>`;
   }).join('');
 
@@ -553,7 +553,7 @@ function showDetail(key, updateHash = true) {
       <div class="detail-cover-inner">
         <div class="detail-nav">
           <button class="back-btn" onclick="showListing()">← Retour au portefeuille</button>
-          <span style="font-size:11px;color:var(--teal-light);font-weight:200;letter-spacing:1px">BRAXTON LOGISTICS · ASSET OVERVIEW</span>
+          <span style="font-size:11px;color:var(--teal-light);font-weight:400;letter-spacing:1px">BRAXTON LOGISTICS · ASSET OVERVIEW</span>
         </div>
         <div class="detail-cover-body">
           <div class="detail-cover-text">
@@ -623,7 +623,7 @@ function showDetail(key, updateHash = true) {
           <tbody>${tenantsRows}</tbody>
         </table>
       </div>
-      <p style="font-size:11px;color:var(--text-muted);margin-bottom:40px;font-weight:200">Conditions de location sur demande. Contactez notre équipe pour les détails.</p>
+      <p style="font-size:11px;color:var(--text-muted);margin-bottom:40px;font-weight:400">Conditions de location sur demande. Contactez notre équipe pour les détails.</p>
 
       <!-- SECTION 03 — DESSERTE -->
       <div class="pq-section-header">
@@ -638,7 +638,7 @@ function showDetail(key, updateHash = true) {
         <div class="pq-section-title">Nous Contacter</div>
       </div>
       <div style="max-width:420px;margin-bottom:60px">
-        <p style="font-size:13px;font-weight:200;color:var(--text-muted);line-height:1.7;margin-bottom:24px">
+        <p style="font-size:13px;font-weight:400;color:var(--text-muted);line-height:1.7;margin-bottom:24px">
           Pour organiser une visite, obtenir les conditions de location ou toute information complémentaire sur cet actif, contactez notre équipe.
         </p>
         <div class="pq-contact-block">
@@ -657,9 +657,9 @@ function showDetail(key, updateHash = true) {
     <div style="background:var(--dark);padding:20px 40px;display:flex;align-items:center;justify-content:space-between">
       <div style="display:flex;align-items:center;gap:12px">
         <div style="width:28px;height:28px;background:var(--teal);display:flex;align-items:center;justify-content:center;clip-path:polygon(0 0,100% 0,100% 70%,70% 100%,0 100%)"><span style="color:#fff;font-weight:600;font-size:12px">B</span></div>
-        <span style="color:var(--white);font-size:12px;font-weight:200;letter-spacing:1px">BRAXTON <span style="color:var(--teal-light)">LOGISTICS</span></span>
+        <span style="color:var(--white);font-size:12px;font-weight:400;letter-spacing:1px">BRAXTON <span style="color:var(--teal-light)">LOGISTICS</span></span>
       </div>
-      <span style="font-size:11px;color:var(--teal-light);font-weight:200">Document confidentiel — Non contractuel — © 2025 Braxton Asset Management</span>
+      <span style="font-size:11px;color:var(--teal-light);font-weight:400">Document confidentiel — Non contractuel — © 2025 Braxton Asset Management</span>
     </div>
   `;
 
@@ -694,12 +694,12 @@ function showContact(updateHash = true) {
     <div style="background:var(--dark);padding:0">
       <div style="max-width:1280px;margin:0 auto;padding:18px 40px 0;display:flex;align-items:center;justify-content:space-between">
         <button class="back-btn" onclick="showListing()">← Retour au portefeuille</button>
-        <span style="font-size:11px;color:var(--teal-light);font-weight:200;letter-spacing:1px">BRAXTON AM · CONTACT</span>
+        <span style="font-size:11px;color:var(--teal-light);font-weight:400;letter-spacing:1px">BRAXTON AM · CONTACT</span>
       </div>
       <div style="max-width:1280px;margin:0 auto;padding:36px 40px 48px">
         <div style="font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal-light);margin-bottom:14px">Nous Contacter</div>
-        <div style="color:var(--white);font-size:30px;font-weight:200;line-height:1.2;margin-bottom:8px">Une question sur un actif ?<br><strong style="font-weight:600;color:var(--teal-pale)">Notre équipe vous répond.</strong></div>
-        <div style="color:var(--teal-light);font-size:13px;font-weight:200;margin-top:10px">Braxton Asset Management — 4 Rue de la Pompe, 75016 Paris</div>
+        <div style="color:var(--white);font-size:30px;font-weight:400;line-height:1.2;margin-bottom:8px">Une question sur un actif ?<br><strong style="font-weight:600;color:var(--teal-pale)">Notre équipe vous répond.</strong></div>
+        <div style="color:var(--teal-light);font-size:13px;font-weight:400;margin-top:10px">Braxton Asset Management — 4 Rue de la Pompe, 75016 Paris</div>
       </div>
     </div>
 
@@ -708,13 +708,13 @@ function showContact(updateHash = true) {
 
       <!-- Braxton Logistics -->
       <div style="background:var(--white);border:1px solid #DCE8E8;overflow:hidden">
-        <div style="background:var(--teal);padding:18px 24px;display:flex;align-items:center;gap:12px">
-          <div style="width:32px;height:32px;background:var(--dark);display:flex;align-items:center;justify-content:center;clip-path:polygon(0 0,100% 0,100% 70%,70% 100%,0 100%)">
+        <div style="background:var(--dark);padding:18px 24px;display:flex;align-items:center;gap:12px">
+          <div style="width:32px;height:32px;background:var(--teal);display:flex;align-items:center;justify-content:center;clip-path:polygon(0 0,100% 0,100% 70%,70% 100%,0 100%)">
             <span style="color:#fff;font-weight:600;font-size:13px">B</span>
           </div>
           <div>
             <div style="color:#fff;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase">Braxton Logistics</div>
-            <div style="color:rgba(255,255,255,.7);font-size:11px;font-weight:200">Actifs logistiques & entrepôts</div>
+            <div style="color:rgba(255,255,255,.7);font-size:11px;font-weight:400">Actifs logistiques & entrepôts</div>
           </div>
         </div>
         <div style="padding:28px 24px;display:flex;flex-direction:column;gap:20px">
@@ -724,13 +724,13 @@ function showContact(updateHash = true) {
           </div>
           <div>
             <div style="font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px">Téléphone</div>
-            <a href="tel:0633631350" style="font-size:22px;font-weight:600;color:var(--teal);text-decoration:none;letter-spacing:.3px">06 33 63 13 50</a>
+            <a href="tel:0633631350" style="font-size:22px;font-weight:600;color:var(--dark);text-decoration:none;letter-spacing:.3px">06 33 63 13 50</a>
           </div>
           <div>
             <div style="font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px">Email</div>
-            <a href="mailto:line@braxtonam.com" style="font-size:15px;font-weight:400;color:var(--teal);text-decoration:none">line@braxtonam.com</a>
+            <a href="mailto:line@braxtonam.com" style="font-size:15px;font-weight:400;color:var(--dark);text-decoration:none">line@braxtonam.com</a>
           </div>
-          <a href="tel:0633631350" style="margin-top:4px;display:block;background:var(--dark);color:#fff;text-align:center;padding:12px;font-size:12px;font-weight:500;letter-spacing:.8px;text-decoration:none;text-transform:uppercase;transition:background .2s" onmouseover="this.style.background='#4B6B6B'" onmouseout="this.style.background='#022B2B'">Appeler →</a>
+          <a href="tel:0633631350" style="margin-top:4px;display:block;background:var(--dark);color:#fff;text-align:center;padding:12px;font-size:12px;font-weight:500;letter-spacing:.8px;text-decoration:none;text-transform:uppercase;transition:background .2s" onmouseover="this.style.background='#DDA73C'" onmouseout="this.style.background='#005F52'">Appeler →</a>
         </div>
       </div>
 
@@ -740,7 +740,7 @@ function showContact(updateHash = true) {
           <svg width="28" height="22" viewBox="0 0 42 32" fill="white"><path d="M1 31V15L8 5l7 10V31H1zm12 0V9l10-9 10 9V31H13zm18 0V15l7-10 7 10V31H31z"/></svg>
           <div>
             <div style="color:#fff;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase">Urban Pro</div>
-            <div style="color:rgba(255,255,255,.5);font-size:11px;font-weight:200">Parcs d'activités urbains</div>
+            <div style="color:rgba(255,255,255,.5);font-size:11px;font-weight:400">Parcs d'activités urbains</div>
           </div>
         </div>
         <div style="padding:28px 24px;display:flex;flex-direction:column;gap:20px">
@@ -775,9 +775,9 @@ function showContact(updateHash = true) {
     <div style="background:var(--dark);padding:20px 40px;display:flex;align-items:center;justify-content:space-between">
       <div style="display:flex;align-items:center;gap:12px">
         <div style="width:28px;height:28px;background:var(--teal);display:flex;align-items:center;justify-content:center;clip-path:polygon(0 0,100% 0,100% 70%,70% 100%,0 100%)"><span style="color:#fff;font-weight:600;font-size:12px">B</span></div>
-        <span style="color:var(--white);font-size:12px;font-weight:200;letter-spacing:1px">BRAXTON <span style="color:var(--teal-light)">ASSET MANAGEMENT</span></span>
+        <span style="color:var(--white);font-size:12px;font-weight:400;letter-spacing:1px">BRAXTON <span style="color:var(--teal-light)">ASSET MANAGEMENT</span></span>
       </div>
-      <span style="font-size:11px;color:var(--teal-light);font-weight:200">© 2025 Braxton Asset Management</span>
+      <span style="font-size:11px;color:var(--teal-light);font-weight:400">© 2025 Braxton Asset Management</span>
     </div>
   `;
 }
@@ -858,7 +858,7 @@ function initMap() {
         ? `showUPDetail('${a.upKey}')`
         : null;
     const cityHTML = hasPage
-      ? `<button type="button" class="map-popup-city" style="cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#4B6B6B;background:none;border:none;padding:0;font-family:inherit;display:block" onclick="${clickFn}">${displayCity} →</button>`
+      ? `<button type="button" class="map-popup-city" style="cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#DDA73C;background:none;border:none;padding:0;font-family:inherit;display:block" onclick="${clickFn}">${displayCity} →</button>`
       : `<div class="map-popup-city">${displayCity}</div>`;
     const popup = `${cityHTML}
       <div class="map-popup-addr">${a.address}<br>${a.cp} ${a.city}</div>
@@ -870,8 +870,8 @@ function initMap() {
     } else {
       L.circleMarker(coords, {
         radius: 8,
-        fillColor: '#4B6B6B',
-        color: '#022B2B',
+        fillColor: '#DDA73C',
+        color: '#005F52',
         weight: 2,
         opacity: 1,
         fillOpacity: 0.85

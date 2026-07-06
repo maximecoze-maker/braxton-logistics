@@ -370,8 +370,8 @@ async function showUPDetail(key, updateHash = true) {
         <tbody>
           ${d.cells.map(c => {
             const pill = c.status === 'occupé'
-              ? `<span style="display:inline-block;padding:3px 10px;font-size:11px;font-weight:500;background:#E8F6EE;color:#1A7A44">Occupé</span>`
-              : `<span style="display:inline-block;padding:3px 10px;font-size:11px;font-weight:500;background:#FEE8E8;color:#C0392B">Vacant</span>`;
+              ? `<span style="display:inline-block;padding:3px 10px;font-size:11px;font-weight:500;background:#FEE8E8;color:#C0392B">Occupé</span>`
+              : `<span style="display:inline-block;padding:3px 10px;font-size:11px;font-weight:500;background:#E8F6EE;color:#1A7A44">Disponible</span>`;
             const loyerCell = c.status === 'vacant' && c.loyer
               ? `<span style="font-weight:600;color:var(--dark)">${new Intl.NumberFormat('fr-FR').format(c.loyer)} €/mois</span>`
               : `<span style="color:var(--text-muted);font-weight:400">—</span>`;
@@ -530,8 +530,8 @@ function showDetail(key, updateHash = true) {
   // Tenancy rows — sans noms de locataires ni montants financiers
   const tenantsRows = d.tenants.map((t, i) => {
     const statusPill = t.vacant
-      ? `<span style="display:inline-block;padding:3px 10px;font-size:11px;font-weight:500;background:#FEE8E8;color:#C0392B">Vacant</span>`
-      : `<span style="display:inline-block;padding:3px 10px;font-size:11px;font-weight:500;background:#E8F6EE;color:#1A7A44">Occupé</span>`;
+      ? `<span style="display:inline-block;padding:3px 10px;font-size:11px;font-weight:500;background:#E8F6EE;color:#1A7A44">Disponible</span>`
+      : `<span style="display:inline-block;padding:3px 10px;font-size:11px;font-weight:500;background:#FEE8E8;color:#C0392B">Occupé</span>`;
     return `<tr class="${t.vacant ? 'vacant-row' : ''}">
       <td style="font-weight:600">Cellule ${i+1}</td>
       <td>${t.gla}</td>

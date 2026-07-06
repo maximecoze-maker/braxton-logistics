@@ -446,9 +446,6 @@ async function showUPDetail(key, updateHash = true) {
           <div class="label" style="color:#aaa">Contact Urban Pro</div>
           <div class="name">Mehdi Liakat</div>
           <a href="tel:0633631350" class="phone">06 33 63 13 50</a>
-          <div class="sep">
-            <a href="https://www.google.com/maps/search/?api=1&query=${d.maps.replace(/\+/g,'%20')}" target="_blank" class="maps-link" style="color:#aaa">→ Voir l'actif sur Google Maps</a>
-          </div>
         </div>
       </div>
     </div>
@@ -642,9 +639,6 @@ function showDetail(key, updateHash = true) {
           <div class="label">Contact Braxton Logistics</div>
           <div class="name">Line Thomas</div>
           <a href="tel:0683547709" class="phone">06 83 54 77 09</a>
-          <div class="sep">
-            <a href="https://www.google.com/maps/search/?api=1&query=${d.maps.replace(/\+/g,'%20')}" target="_blank" class="maps-link">→ Voir l'actif sur Google Maps</a>
-          </div>
         </div>
       </div>
 

@@ -287,211 +287,62 @@ renderCards('all');
 // ══════════════════════════════════════
 // URBAN PRO DATA
 // ══════════════════════════════════════
+// Static metadata only — the "cells" arrays (per-lot surfaces / occupancy / rent) are
+// loaded from data/up-assets.json, which a daily GitHub Action refreshes from Notion.
 const upAssets = {
   "valenton-up": {
     city:"Valenton", address:"3 Rue Aminata Traoré", cp:"94460", region:"idf", dept:"Val-de-Marne (94)",
     maps:"3+Rue+Aminata+Traore+94460+Valenton+France",
-    cells:[
-      {num:1, rdc:60,r1:60,total:120,status:"occupé"},
-      {num:2, rdc:60,r1:60,total:120,status:"occupé"},
-      {num:3, rdc:60,r1:60,total:120,status:"occupé"},
-      {num:4, rdc:60,r1:60,total:120,status:"occupé"},
-      {num:5, rdc:60,r1:60,total:120,status:"occupé"},
-      {num:6, rdc:60,r1:60,total:120,status:"occupé"},
-      {num:7, rdc:60,r1:60,total:120,status:"occupé"},
-      {num:8, rdc:60,r1:60,total:120,status:"occupé"},
-      {num:9, rdc:60,r1:60,total:120,status:"occupé"},
-      {num:10,rdc:60,r1:60,total:120,status:"vacant",loyer:1800,dispo:"Immédiat"},
-      {num:11,rdc:60,r1:60,total:120,status:"occupé"},
-      {num:12,rdc:60,r1:60,total:120,status:"occupé"},
-      {num:13,rdc:90,r1:90,total:180,status:"occupé"},
-      {num:14,rdc:60,r1:60,total:120,status:"vacant",loyer:1800,dispo:"Immédiat"},
-      {num:15,rdc:60,r1:60,total:120,status:"vacant",loyer:1800,dispo:"Oct. 2026"},
-      {num:16,rdc:60,r1:60,total:120,status:"vacant",loyer:1800,dispo:"Immédiat"},
-      {num:17,rdc:60,r1:60,total:120,status:"occupé"},
-      {num:18,rdc:60,r1:60,total:120,status:"occupé"},
-      {num:19,rdc:60,r1:60,total:120,status:"occupé"},
-      {num:20,rdc:60,r1:60,total:120,status:"occupé"},
-      {num:21,rdc:60,r1:60,total:120,status:"occupé"},
-      {num:22,rdc:60,r1:60,total:120,status:"occupé"},
-      {num:23,rdc:60,r1:60,total:120,status:"occupé"},
-    ]
   },
   "epinay-up": {
     city:"Épinay-sur-Seine", address:"3 Rue des Carrières", cp:"93800", region:"idf", dept:"Seine-Saint-Denis (93)",
     maps:"3+Rue+des+Carrieres+93800+Epinay-sur-Seine+France",
-    cells:[
-      {num:1, rdc:58.55, r1:58.55, total:117.1, status:"vacant", loyer:1952},
-      {num:2, rdc:58.25, r1:58.25, total:116.5, status:"vacant", loyer:1942},
-      {num:3, rdc:80.2,  r1:80.2,  total:160.4, status:"occupé"},
-      {num:4, rdc:80.05, r1:80.05, total:160.1, status:"vacant", loyer:2668},
-      {num:5, rdc:58.2,  r1:58.2,  total:116.4, status:"occupé"},
-      {num:6, rdc:58.2,  r1:58.2,  total:116.4, status:"occupé"},
-      {num:7, rdc:58.2,  r1:58.2,  total:116.4, status:"vacant", loyer:1940},
-      {num:10,rdc:58.2,  r1:58.2,  total:116.4, status:"vacant", loyer:1940},
-      {num:11,rdc:58.2,  r1:58.2,  total:116.4, status:"occupé"},
-      {num:12,rdc:58.2,  r1:58.2,  total:116.4, status:"vacant", loyer:1940},
-      {num:14,rdc:58.2,  r1:58.2,  total:116.4, status:"occupé"},
-      {num:15,rdc:58.2,  r1:58.2,  total:116.4, status:"vacant", loyer:1940},
-      {num:16,rdc:57.35, r1:57.35, total:114.7, status:"vacant", loyer:1912},
-      {num:17,rdc:55.45, r1:55.45, total:110.9, status:"occupé"},
-      {num:18,rdc:53.5,  r1:53.5,  total:107,   status:"occupé"},
-      {num:19,rdc:55.55, r1:55.55, total:111.1, status:"occupé"},
-      {num:20,rdc:57.05, r1:57.05, total:114.1, status:"occupé"},
-    ]
   },
   "marseille-up": {
     city:"Marseille", address:"10 Impasse du Pistou", cp:"13009", region:"paca", dept:"Bouches-du-Rhône (13)",
     maps:"10+Impasse+du+Pistou+13009+Marseille+France",
-    cells:[
-      {num:1, rdc:38.15, r1:38.15, total:76.3,  status:"vacant", loyer:1176},
-      {num:2, rdc:49.05, r1:49.05, total:98.1,  status:"vacant", loyer:1472},
-      {num:3, rdc:59.95, r1:59.95, total:119.9, status:"vacant", loyer:1699},
-      {num:4, rdc:45.5,  r1:45.5,  total:91,    status:"vacant", loyer:1365},
-      {num:5, rdc:50.55, r1:50.55, total:101.1, status:"vacant", loyer:1474},
-      {num:6, rdc:57.2,  r1:57.2,  total:114.4, status:"vacant", loyer:1621},
-      {num:7, rdc:61.8,  r1:61.8,  total:123.6, status:"vacant", loyer:1700},
-      {num:8, rdc:67.25, r1:67.25, total:134.5, status:"vacant", loyer:1849},
-      {num:9, rdc:72.65, r1:72.65, total:145.3, status:"vacant", loyer:1998},
-      {num:10,rdc:79.95, r1:79.95, total:159.9, status:"vacant", loyer:2199},
-      {num:11,rdc:69.6,  r1:69.6,  total:139.2, status:"vacant", loyer:1914},
-      {num:12,rdc:72.6,  r1:72.6,  total:145.2, status:"vacant", loyer:1997},
-      {num:13,rdc:67.15, r1:67.15, total:134.3, status:"vacant", loyer:1847},
-      {num:14,rdc:61.7,  r1:61.7,  total:123.4, status:"vacant", loyer:1697},
-      {num:15,rdc:58.35, r1:58.35, total:116.7, status:"vacant", loyer:1653},
-      {num:16,rdc:50.15, r1:50.15, total:100.3, status:"vacant", loyer:1505},
-      {num:17,rdc:45.3,  r1:45.3,  total:90.6,  status:"vacant", loyer:1359},
-    ]
   },
   "bagnolet-up": {
     city:"Bagnolet", address:"35 Rue Jean Lolive", cp:"93170", region:"idf", dept:"Seine-Saint-Denis (93)",
     maps:"35+Rue+Jean+Lolive+93170+Bagnolet+France",
-    cells:[
-      {num:1, rdc:66.45, r1:66.45, total:132.9, status:"vacant", loyer:2437},
-      {num:2, rdc:66,    r1:66,    total:132,   status:"vacant", loyer:2420},
-      {num:3, rdc:65.7,  r1:65.7,  total:131.4, status:"vacant", loyer:2409},
-      {num:4, rdc:67,    r1:67,    total:134,   status:"occupé"},
-      {num:5, rdc:66.6,  r1:66.6,  total:133.2, status:"vacant", loyer:2442},
-      {num:6, rdc:66,    r1:66,    total:132,   status:"vacant", loyer:2420},
-      {num:7, rdc:65.55, r1:65.55, total:131.1, status:"vacant", loyer:2404},
-      {num:8, rdc:67,    r1:67,    total:134,   status:"vacant", loyer:2457},
-      {num:9, rdc:66.55, r1:66.55, total:133.1, status:"vacant", loyer:2440},
-      {num:10,rdc:65.85, r1:65.85, total:131.7, status:"occupé"},
-      {num:11,rdc:65.5,  r1:65.5,  total:131,   status:"occupé"},
-      {num:12,rdc:67.15, r1:67.15, total:134.3, status:"vacant", loyer:2462},
-      {num:13,rdc:64.35, r1:64.35, total:128.7, status:"occupé"},
-      {num:14,rdc:65.25, r1:65.25, total:130.5, status:"occupé"},
-      {num:15,rdc:65.4,  r1:65.4,  total:130.8, status:"vacant", loyer:2398},
-      {num:16,rdc:65.7,  r1:65.7,  total:131.4, status:"vacant", loyer:2409},
-      {num:17,rdc:64.15, r1:64.15, total:128.3, status:"occupé"},
-      {num:18,rdc:89.05, r1:89.05, total:178.1, status:"vacant", loyer:3265},
-      {num:19,rdc:87.55, r1:87.55, total:175.1, status:"vacant", loyer:3210},
-      {num:20,rdc:87.8,  r1:87.8,  total:175.6, status:"vacant", loyer:3219},
-      {num:21,rdc:90.35, r1:90.35, total:180.7, status:"vacant", loyer:3313},
-      {num:22,rdc:88.85, r1:88.85, total:177.7, status:"vacant", loyer:3258},
-      {num:23,rdc:88.65, r1:88.65, total:177.3, status:"vacant", loyer:3251},
-      {num:24,rdc:86.5,  r1:86.5,  total:173,   status:"occupé"},
-      {num:25,rdc:90.45, r1:90.45, total:180.9, status:"vacant", loyer:3317},
-      {num:26,rdc:89.3,  r1:89.3,  total:178.6, status:"vacant", loyer:3274},
-      {num:27,rdc:88.55, r1:88.55, total:177.1, status:"vacant", loyer:3247},
-      {num:28,rdc:89.2,  r1:89.2,  total:178.4, status:"vacant", loyer:3271},
-      {num:29,rdc:90.35, r1:90.35, total:180.7, status:"vacant", loyer:3313},
-      {num:30,rdc:87.4,  r1:87.4,  total:174.8, status:"vacant", loyer:3205},
-      {num:31,rdc:88.65, r1:88.65, total:177.3, status:"vacant", loyer:3251},
-    ]
   },
   "neuilly-up": {
     city:"Neuilly-Plaisance", address:"1 Rue Alexander Fleming", cp:"93360", region:"idf", dept:"Seine-Saint-Denis (93)",
     maps:"1+Rue+Alexander+Fleming+93360+Neuilly-Plaisance+France",
-    cells:[
-      {num:1, rdc:164.5, r1:164.5, total:329,  status:"occupé"},
-      {num:2, rdc:80,    r1:80,    total:160,  status:"occupé"},
-      {num:3, rdc:80,    r1:80,    total:160,  status:"occupé"},
-      {num:4, rdc:165,   r1:165,   total:330,  status:"occupé"},
-      {num:5, rdc:80,    r1:80,    total:160,  status:"occupé"},
-      {num:6, rdc:252.5, r1:252.5, total:505,  status:"vacant", loyer:5260},
-      {num:7, rdc:80,    r1:80,    total:160,  status:"occupé"},
-      {num:8, rdc:210,   r1:210,   total:420,  status:"occupé"},
-      {num:9, rdc:80,    r1:80,    total:160,  status:"vacant", loyer:1933},
-      {num:10,rdc:80.5,  r1:80.5,  total:161,  status:"occupé"},
-      {num:11,rdc:80.5,  r1:80.5,  total:161,  status:"occupé"},
-      {num:12,rdc:79,    r1:79,    total:158,  status:"occupé"},
-      {num:13,rdc:37.5,  r1:37.5,  total:75,   status:"occupé"},
-      {num:14,rdc:79.5,  r1:79.5,  total:159,  status:"vacant", loyer:1921},
-      {num:16,rdc:79,    r1:79,    total:158,  status:"vacant", loyer:1909},
-      {num:17,rdc:79,    r1:79,    total:158,  status:"vacant", loyer:1909},
-      {num:18,rdc:79,    r1:79,    total:158,  status:"vacant", loyer:1909},
-      {num:19,rdc:79,    r1:79,    total:158,  status:"occupé"},
-      {num:20,rdc:79,    r1:79,    total:158,  status:"vacant", loyer:1909},
-      {num:21,rdc:79,    r1:79,    total:158,  status:"vacant", loyer:1909},
-      {num:23,rdc:78.5,  r1:78.5,  total:157,  status:"vacant", loyer:1897},
-      {num:24,rdc:79.5,  r1:79.5,  total:159,  status:"occupé"},
-      {num:25,rdc:79.5,  r1:79.5,  total:159,  status:"occupé"},
-      {num:26,rdc:80,    r1:80,    total:160,  status:"vacant", loyer:1933},
-      {num:27,rdc:73,    r1:73,    total:146,  status:"occupé"},
-      {num:28,rdc:78.5,  r1:78.5,  total:157,  status:"vacant", loyer:1897},
-    ]
   },
   "morangis-up": {
     city:"Morangis", address:"4 Rue du Docteur Albert Schweitzer", cp:"91420", region:"idf", dept:"Essonne (91)",
     maps:"4+Rue+du+Docteur+Albert+Schweitzer+91420+Morangis+France",
-    cells: Array.from({length:36}, (_,i) => ({num:i+1, rdc:61.11, r1:61.11, total:122.22, status:"vacant", loyer:1477}))
   },
   "eguilles-up": {
     city:"Éguilles", address:"320B Rue Topaze", cp:"13510", region:"paca", dept:"Bouches-du-Rhône (13)",
     maps:"320B+Rue+Topaze+13510+Eguilles+France",
-    cells:[
-      {num:"1",  rdc:132.5, r1:132.5, total:265,  status:"occupé"},
-      {num:"2",  rdc:132.5, r1:132.5, total:265,  status:"occupé"},
-      {num:"3",  rdc:132.5, r1:132.5, total:265,  status:"occupé"},
-      {num:"4",  rdc:132.5, r1:132.5, total:265,  status:"occupé"},
-      {num:"5",  rdc:160,   r1:160,   total:320,  status:"occupé"},
-      {num:"6",  rdc:200,   r1:200,   total:400,  status:"occupé"},
-      {num:"7",  rdc:145,   r1:145,   total:290,  status:"occupé"},
-      {num:"8",  rdc:145,   r1:145,   total:290,  status:"occupé"},
-      {num:"9a", rdc:109,   r1:109,   total:218,  status:"occupé"},
-      {num:"9b", rdc:4.5,   r1:4.5,   total:9,    status:"occupé"},
-      {num:"9c", rdc:4.5,   r1:4.5,   total:9,    status:"occupé"},
-      {num:"9d", rdc:6,     r1:6,     total:12,   status:"occupé"},
-      {num:"9e", rdc:18,    r1:18,    total:36,   status:"vacant", loyer:999},
-    ]
   },
   "gradignan-up": {
     city:"Gradignan", address:"17 Avenue de l'Europe", cp:"33170", region:"bordeaux", dept:"Gironde (33)",
     maps:"17+Avenue+de+l+Europe+33170+Gradignan+France",
-    cells:[
-      {num:1, rdc:63.5, r1:63.5, total:127, status:"vacant", loyer:1429},
-      {num:2, rdc:64.5, r1:64.5, total:129, status:"vacant", loyer:1451},
-      {num:3, rdc:64.5, r1:64.5, total:129, status:"vacant", loyer:1451},
-      {num:4, rdc:64.5, r1:64.5, total:129, status:"vacant", loyer:1451},
-      {num:5, rdc:64.5, r1:64.5, total:129, status:"vacant", loyer:1451},
-      {num:6, rdc:64.5, r1:64.5, total:129, status:"vacant", loyer:1451},
-      {num:7, rdc:64.5, r1:64.5, total:129, status:"vacant", loyer:1451},
-      {num:8, rdc:64.5, r1:64.5, total:129, status:"vacant", loyer:1451},
-      {num:9, rdc:63.5, r1:63.5, total:127, status:"vacant", loyer:1429},
-      {num:10,rdc:63.5, r1:63.5, total:127, status:"vacant", loyer:1429},
-      {num:11,rdc:64.5, r1:64.5, total:129, status:"vacant", loyer:1451},
-      {num:12,rdc:64.5, r1:64.5, total:129, status:"vacant", loyer:1451},
-      {num:13,rdc:64.5, r1:64.5, total:129, status:"vacant", loyer:1451},
-      {num:14,rdc:64.5, r1:64.5, total:129, status:"vacant", loyer:1451},
-      {num:15,rdc:64.5, r1:64.5, total:129, status:"vacant", loyer:1451},
-      {num:16,rdc:64.5, r1:64.5, total:129, status:"vacant", loyer:1451},
-      {num:17,rdc:64.5, r1:64.5, total:129, status:"vacant", loyer:1451},
-      {num:18,rdc:64.5, r1:64.5, total:129, status:"vacant", loyer:1451},
-      {num:19,rdc:63.5, r1:63.5, total:127, status:"occupé"},
-    ]
   },
   "corbeil-up": {
     city:"Corbeil-Essonnes", address:"93 Rue Émile Zola", cp:"91100", region:"idf", dept:"Essonne (91)",
     maps:"93+Rue+Emile+Zola+91100+Corbeil-Essonnes+France",
-    cells: Array.from({length:21}, (_,i) => ({num:i+1, rdc:59.53, r1:59.53, total:119.05, status:"vacant", loyer:1240}))
   },
 };
 
+// Loads data/up-assets.json (synced daily from Notion) and merges "cells" onto upAssets.
+const upAssetsDataLoaded = fetch('data/up-assets.json')
+  .then(r => r.json())
+  .then(data => {
+    Object.entries(data).forEach(([key, entry]) => {
+      if (upAssets[key]) upAssets[key].cells = entry.cells;
+    });
+  })
+  .catch(err => console.error('Could not load data/up-assets.json:', err));
+
 // ── URBAN PRO DETAIL PAGE ──
-function showUPDetail(key) {
+async function showUPDetail(key) {
   const d = upAssets[key];
   if (!d) return;
+  if (!d.cells) await upAssetsDataLoaded;
   const badge = badgeMap[d.region];
   const mapSrc = `https://maps.google.com/maps?q=${d.maps}&output=embed`;
 

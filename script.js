@@ -203,7 +203,7 @@ const assets = [
   { city:"Marseille",         address:"10 Impasse du Pistou",              cp:"13009", region:"paca",     dept:"Bouches-du-Rhône (13)",      brand:"urbanpro", upKey:"marseille-up" },
   { city:"Gradignan",         address:"17 Avenue de l'Europe",             cp:"33170", region:"bordeaux", dept:"Gironde (33)",               brand:"urbanpro", upKey:"gradignan-up" },
   { city:"Morangis",          address:"4 Rue du Docteur Albert Schweitzer",cp:"91420", region:"idf",      dept:"Essonne (91)",               brand:"urbanpro", upKey:"morangis-up" },
-  { city:"Corbeil-Essonnes",  address:"93 Rue Émile Zola",                 cp:"91100", region:"idf",      dept:"Essonne (91)",               brand:"urbanpro", upKey:"corbeil-up" },
+  { city:"Corbeil-Essonnes",  address:"95 Rue Émile Zola",                 cp:"91100", region:"idf",      dept:"Essonne (91)",               brand:"urbanpro", upKey:"corbeil-up" },
   { city:"Buc", address:"697 Rue Fourny", cp:"78530", region:"idf", dept:"Yvelines (78)", tag:"697" },
   { city:"Buc", address:"617 Rue Fourny", cp:"78530", region:"idf", dept:"Yvelines (78)", tag:"617", imKey:"buc" },
   { city:"Noisy-le-Sec", address:"28 Av. de Bobigny", cp:"93130", region:"idf", dept:"Seine-Saint-Denis (93)", imKey:"noisy" },
@@ -323,8 +323,8 @@ const upAssets = {
     maps:"17+Avenue+de+l+Europe+33170+Gradignan+France",
   },
   "corbeil-up": {
-    city:"Corbeil-Essonnes", address:"93 Rue Émile Zola", cp:"91100", region:"idf", dept:"Essonne (91)",
-    maps:"93+Rue+Emile+Zola+91100+Corbeil-Essonnes+France",
+    city:"Corbeil-Essonnes", address:"95 Rue Émile Zola", cp:"91100", region:"idf", dept:"Essonne (91)",
+    maps:"95+Rue+Emile+Zola+91100+Corbeil-Essonnes+France",
   },
 };
 

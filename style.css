@@ -30,10 +30,10 @@ header { background: var(--dark); position: sticky; top: 0; z-index: 100; border
 .header-cta:hover { background: var(--teal-light); }
 
 /* HERO */
-.hero { background: var(--dark); padding: 72px 32px 64px; position: relative; overflow: hidden; }
+.hero { background: var(--dark); padding: 72px 24px 64px; position: relative; overflow: hidden; }
 .hero::before { content:''; position: absolute; top:0; right:0; width:45%; height:100%; background: linear-gradient(135deg, transparent 40%, var(--teal) 100%); opacity:.12; }
 .hero::after { content:''; position: absolute; bottom:-1px; left:0; right:0; height:60px; background: var(--offwhite); clip-path: polygon(0 100%, 100% 100%, 100% 40%, 0 100%); }
-.hero-inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 1; }
+.hero-inner { position: relative; z-index: 1; }
 .hero h1 { color: var(--white); font-family: var(--font-head); font-size: 38px; font-weight: 600; line-height: 1.2; margin-bottom: 12px; max-width: 640px; }
 .hero h1 strong { font-weight: 800; color: var(--teal-pale); }
 .hero p { color: var(--teal-light); font-weight: 400; font-size: 15px; max-width: 520px; margin-bottom: 36px; }

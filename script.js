@@ -4,7 +4,7 @@
 const badgeMap = {
   idf:       { cls:'badge-idf',   label:'Île-de-France' },
   paca:      { cls:'badge-paca',  label:'PACA' },
-  bordeaux:  { cls:'badge-bord',  label:'Bordeaux' },
+  bordeaux:  { cls:'badge-bord',  label:'Nouvelle Aquitaine' },
   bourgogne: { cls:'badge-bourg', label:'Bourgogne' },
 };
 
@@ -200,10 +200,10 @@ const assets = [
   { city:"Neuilly-Plaisance", address:"1 Rue Alexander Fleming",           cp:"93360", region:"idf",      dept:"Seine-Saint-Denis (93)",     brand:"urbanpro", upKey:"neuilly-up" },
   { city:"Épinay-sur-Seine",  address:"3 Rue des Carrières",               cp:"93800", region:"idf",      dept:"Seine-Saint-Denis (93)",     brand:"urbanpro", upKey:"epinay-up" },
   { city:"Bagnolet",          address:"35 Rue Jean Lolive",                cp:"93170", region:"idf",      dept:"Seine-Saint-Denis (93)",     brand:"urbanpro", upKey:"bagnolet-up" },
-  { city:"Marseille",         address:"10 Impasse du Pistou",              cp:"13009", region:"paca",     dept:"Bouches-du-Rhône (13)",      brand:"urbanpro", upKey:"marseille-up" },
+  { city:"Marseille",         address:"10 Impasse du Pistou",              cp:"13009", region:"paca",     dept:"Bouches-du-Rhône (13)",      brand:"urbanpro", upKey:"marseille-up", underConstruction:true },
   { city:"Gradignan",         address:"17 Avenue de l'Europe",             cp:"33170", region:"bordeaux", dept:"Gironde (33)",               brand:"urbanpro", upKey:"gradignan-up" },
-  { city:"Morangis",          address:"4 Rue du Docteur Albert Schweitzer",cp:"91420", region:"idf",      dept:"Essonne (91)",               brand:"urbanpro", upKey:"morangis-up" },
-  { city:"Corbeil-Essonnes",  address:"95 Rue Émile Zola",                 cp:"91100", region:"idf",      dept:"Essonne (91)",               brand:"urbanpro", upKey:"corbeil-up" },
+  { city:"Morangis",          address:"4 Rue du Docteur Albert Schweitzer",cp:"91420", region:"idf",      dept:"Essonne (91)",               brand:"urbanpro", upKey:"morangis-up", underConstruction:true },
+  { city:"Corbeil-Essonnes",  address:"95 Rue Émile Zola",                 cp:"91100", region:"idf",      dept:"Essonne (91)",               brand:"urbanpro", upKey:"corbeil-up", underConstruction:true },
   { city:"Buc", address:"697 Rue Fourny", cp:"78530", region:"idf", dept:"Yvelines (78)", tag:"697" },
   { city:"Buc", address:"617 Rue Fourny", cp:"78530", region:"idf", dept:"Yvelines (78)", tag:"617", imKey:"buc" },
   { city:"Noisy-le-Sec", address:"28 Av. de Bobigny", cp:"93130", region:"idf", dept:"Seine-Saint-Denis (93)", imKey:"noisy" },
@@ -252,6 +252,7 @@ function renderCards(filter) {
             <div class="card-city">${displayCity}</div>
             <div style="margin-top:5px;display:flex;gap:5px;flex-wrap:wrap">
               ${isUP ? `<span class="up-badge">${upLogoSVG} Urban Pro</span>` : ''}
+              ${a.underConstruction ? '<span class="construction-badge">En cours de construction</span>' : ''}
               ${hasIM ? '<span class="im-pill">FICHE TECHNIQUE</span>' : ''}
             </div>
           </div>
@@ -300,7 +301,7 @@ const upAssets = {
   },
   "marseille-up": {
     city:"Marseille", address:"10 Impasse du Pistou", cp:"13009", region:"paca", dept:"Bouches-du-Rhône (13)",
-    maps:"10+Impasse+du+Pistou+13009+Marseille+France",
+    maps:"10+Impasse+du+Pistou+13009+Marseille+France", underConstruction:true,
   },
   "bagnolet-up": {
     city:"Bagnolet", address:"35 Rue Jean Lolive", cp:"93170", region:"idf", dept:"Seine-Saint-Denis (93)",
@@ -312,7 +313,7 @@ const upAssets = {
   },
   "morangis-up": {
     city:"Morangis", address:"4 Rue du Docteur Albert Schweitzer", cp:"91420", region:"idf", dept:"Essonne (91)",
-    maps:"4+Rue+du+Docteur+Albert+Schweitzer+91420+Morangis+France",
+    maps:"4+Rue+du+Docteur+Albert+Schweitzer+91420+Morangis+France", underConstruction:true,
   },
   "eguilles-up": {
     city:"Éguilles", address:"320B Rue Topaze", cp:"13510", region:"paca", dept:"Bouches-du-Rhône (13)",
@@ -324,7 +325,7 @@ const upAssets = {
   },
   "corbeil-up": {
     city:"Corbeil-Essonnes", address:"95 Rue Émile Zola", cp:"91100", region:"idf", dept:"Essonne (91)",
-    maps:"95+Rue+Emile+Zola+91100+Corbeil-Essonnes+France",
+    maps:"95+Rue+Emile+Zola+91100+Corbeil-Essonnes+France", underConstruction:true,
   },
 };
 
@@ -411,6 +412,7 @@ async function showUPDetail(key, updateHash = true) {
                 <span style="color:#fff;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase">Urban Pro</span>
               </div>
               <span class="card-badge ${badge.cls}" style="font-size:10px">${badge.label}</span>
+              ${d.underConstruction ? '<span class="construction-badge">En cours de construction</span>' : ''}
             </div>
             <div class="detail-cover-title">${d.city}<strong>${d.address}</strong></div>
             <div class="detail-cover-addr">${d.cp} ${d.city} · ${d.dept}</div>
@@ -744,7 +746,11 @@ function showContact(updateHash = true) {
         <div style="padding:28px 24px;display:flex;flex-direction:column;gap:20px">
           <div>
             <div style="font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px">Contacts</div>
-            <div style="font-size:15px;font-weight:400;color:var(--text)">Mehdi &amp; Maxime</div>
+            <div style="font-size:15px;font-weight:400;color:var(--text)">Mehdi Liakat &amp; Maxime</div>
+          </div>
+          <div>
+            <div style="font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px">Téléphone</div>
+            <a href="tel:0633631350" style="font-size:22px;font-weight:600;color:#1a1a1a;text-decoration:none;letter-spacing:.3px">06 33 63 13 50</a>
           </div>
           <div>
             <div style="font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px">Email</div>

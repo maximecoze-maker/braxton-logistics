@@ -224,7 +224,7 @@ const assets = [
 // ══════════════════════════════════════
 // LISTING
 // ══════════════════════════════════════
-const upLogoSVG = `<svg width="14" height="12" viewBox="0 0 42 32" fill="currentColor"><path d="M1 31V15L8 5l7 10V31H1zm12 0V9l10-9 10 9V31H13zm18 0V15l7-10 7 10V31H31z"/></svg>`;
+const upLogoSVG = `<img src="urban-pro-icon.png" alt="" class="up-logo-icon" />`;
 
 function renderCards(filter) {
   const grid = document.getElementById('assets-grid');
@@ -408,7 +408,7 @@ async function showUPDetail(key, updateHash = true) {
           <div class="detail-cover-text">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
               <div style="background:#1a1a1a;padding:6px 12px;display:inline-flex;align-items:center;gap:7px">
-                <svg width="14" height="12" viewBox="0 0 42 32" fill="white"><path d="M1 31V15L8 5l7 10V31H1zm12 0V9l10-9 10 9V31H13zm18 0V15l7-10 7 10V31H31z"/></svg>
+                <img src="urban-pro-icon.png" alt="" style="height:12px;filter:invert(1)" />
                 <span style="color:#fff;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase">Urban Pro</span>
               </div>
               <span class="card-badge ${badge.cls}" style="font-size:10px">${badge.label}</span>
@@ -459,7 +459,7 @@ async function showUPDetail(key, updateHash = true) {
     <div style="background:var(--dark);padding:20px 40px;display:flex;align-items:center;justify-content:space-between">
       <div style="display:flex;align-items:center;gap:12px">
         <div style="background:#1a1a1a;padding:5px 10px;display:inline-flex;align-items:center;gap:6px">
-          <svg width="12" height="10" viewBox="0 0 42 32" fill="white"><path d="M1 31V15L8 5l7 10V31H1zm12 0V9l10-9 10 9V31H13zm18 0V15l7-10 7 10V31H31z"/></svg>
+          <img src="urban-pro-icon.png" alt="" style="height:10px;filter:invert(1)" />
           <span style="color:#fff;font-size:10px;font-weight:600;letter-spacing:1px">URBAN PRO</span>
         </div>
         <span style="color:var(--teal-light);font-size:11px;font-weight:400">by Braxton Asset Management</span>
@@ -737,11 +737,8 @@ function showContact(updateHash = true) {
       <!-- Urban Pro -->
       <div style="background:var(--white);border:1px solid #1a1a1a;overflow:hidden">
         <div style="background:#1a1a1a;padding:18px 24px;display:flex;align-items:center;gap:12px">
-          <svg width="28" height="22" viewBox="0 0 42 32" fill="white"><path d="M1 31V15L8 5l7 10V31H1zm12 0V9l10-9 10 9V31H13zm18 0V15l7-10 7 10V31H31z"/></svg>
-          <div>
-            <div style="color:#fff;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase">Urban Pro</div>
-            <div style="color:rgba(255,255,255,.5);font-size:11px;font-weight:400">Parcs d'activités urbains</div>
-          </div>
+          <img src="urban-pro-logo.png" alt="Urban Pro" style="height:36px;filter:invert(1)" />
+          <div style="color:rgba(255,255,255,.5);font-size:11px;font-weight:400">Parcs d'activités urbains</div>
         </div>
         <div style="padding:28px 24px;display:flex;flex-direction:column;gap:20px">
           <div>
@@ -835,7 +832,7 @@ function initMap() {
   const upIcon = L.divIcon({
     className: '',
     html: `<div style="width:20px;height:20px;background:#1a1a1a;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.35)">
-      <svg width="11" height="9" viewBox="0 0 42 32" fill="white"><path d="M1 31V15L8 5l7 10V31H1zm12 0V9l10-9 10 9V31H13zm18 0V15l7-10 7 10V31H31z"/></svg>
+      <img src="urban-pro-icon.png" alt="" style="height:9px;filter:invert(1)" />
     </div>`,
     iconSize: [20, 20],
     iconAnchor: [10, 10],

@@ -18,18 +18,20 @@ if (!NOTION_TOKEN) {
   process.exit(1);
 }
 
-// asset slug -> "Etat locatif" database id (from Notion, under each deal's page
-// in the "Investment Pipeline" > "Global View" structure)
+// asset slug -> "Etat locatif" database page id (from Notion, under each deal's page
+// in the "Investment Pipeline" > "Global View" structure).
+// Note: this must be the database's own block/page id (what the classic
+// /v1/databases/{id}/query endpoint expects), not the "data source" id.
 const ASSETS = {
-  'valenton-up':  'a9d8acb2-ed1a-82b1-9a6c-0746f77febe7',
-  'epinay-up':    '6718acb2-ed1a-82f4-8a7c-8750257f16da',
-  'marseille-up': '1048acb2-ed1a-8387-a45c-8715bbad6d5c',
-  'bagnolet-up':  '1ca8acb2-ed1a-8208-a1da-87346bd96396',
-  'neuilly-up':   '6d58acb2-ed1a-8345-acf3-87dd7b129551',
-  'morangis-up':  '98d8acb2-ed1a-8370-8e6e-8746dbc6d458',
-  'corbeil-up':   'dd58acb2-ed1a-83d3-98ed-07b7948ca060',
-  'eguilles-up':  '95e8acb2-ed1a-837a-9e68-07861eec701d',
-  'gradignan-up': 'dea8acb2-ed1a-8230-8c75-87e2f1e8a32f',
+  'valenton-up':  '2cd8acb2-ed1a-82b8-bf91-016b5fb9a85f',
+  'epinay-up':    'e3c8acb2-ed1a-832d-9c7c-011a3518acc0',
+  'marseille-up': 'be88acb2-ed1a-8370-8b9e-81888af651f8',
+  'bagnolet-up':  '3948acb2-ed1a-8076-9553-e4f17e11beda',
+  'neuilly-up':   'fdd8acb2-ed1a-82b1-aabf-01f7175e1f06',
+  'morangis-up':  '3958acb2-ed1a-8086-807f-f1ff4148e104',
+  'corbeil-up':   '3958acb2-ed1a-80fa-a4db-e26460fd63e3',
+  'eguilles-up':  'f1a8acb2-ed1a-834e-9b3c-01183be53fda',
+  'gradignan-up': '3b58acb2-ed1a-8392-b913-81d592c11cd8',
 };
 
 async function queryDatabase(databaseId) {

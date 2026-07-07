@@ -75,6 +75,9 @@ header { background: var(--dark); position: sticky; top: 0; z-index: 100; border
 .up-badge, .im-pill, .construction-badge { display: inline-flex; align-items: center; height: 20px; box-sizing: border-box; font-size: 9px; font-weight: 600; letter-spacing: .5px; text-transform: uppercase; padding: 0 8px; white-space: nowrap; }
 .im-pill { background: var(--dark); color: var(--teal-pale); }
 .construction-badge { background: #FDE8C8; color: #A0590A; }
+.status-pill { display: inline-block; width: 84px; text-align: center; box-sizing: border-box; padding: 3px 0; font-size: 11px; font-weight: 500; }
+.status-pill.occupied { background: #FEE8E8; color: #C0392B; }
+.status-pill.available { background: #E8F6EE; color: #1A7A44; }
 .filter-btn-up { border-color: #1a1a1a !important; color: #1a1a1a !important; font-weight: 500; display: flex; align-items: center; }
 .filter-btn-up:hover, .filter-btn-up.active { background: #1a1a1a !important; border-color: #1a1a1a !important; color: #fff !important; }
 .up-logo-icon { height: 16px; width: auto; display: block; }

@@ -95,7 +95,46 @@ const imAssets = {
       { name: "ASM Consulting", gla: "483 m²", rent: "53 130 €", psm: "110 €/m²", walb: "1,9", walt: "9,0" },
       { name: "Vacant", gla: "3 514 m²", rent: "—", psm: "—", walb: "—", walt: "—", vacant: true },
     ],
-    maps: "23+Rue+des+Beaux+Soleils+95520+Osny+France"
+    maps: "23+Rue+des+Beaux+Soleils+95520+Osny+France",
+    // Détail par bâtiment / cellule, avec répartition surface activité ("industrie") / bureau.
+    cellDetail: {
+      buildings: [
+        {
+          name: "A",
+          cells: [
+            { label: "1-A",   activite: 472, bureau: 74, occupied: true },
+            { label: "2-A",   activite: 354, bureau: 65, occupied: true },
+            { label: "3-A",   activite: 326, bureau: 59, occupied: true },
+            { label: "4-A",   activite: 325, bureau: 60, occupied: true },
+            { label: "5-A",   activite: 457, bureau: 86, occupied: true },
+          ],
+          totalActivite: 1934, totalBureau: 344,
+        },
+        {
+          name: "B",
+          cells: [
+            { label: "1-B",   activite: 278, bureau: 74, occupied: false },
+            { label: "1-B'",  activite: 258, bureau: 56, occupied: true },
+            { label: "2-B",   activite: 376, bureau: 85, occupied: false },
+            { label: "3-B",   activite: 379, bureau: 85, occupied: false },
+            { label: "4-B",   activite: 378, bureau: 85, occupied: false },
+            { label: "5-B",   activite: 377, bureau: 85, occupied: true },
+            { label: "6-B",   activite: 404, bureau: 79, occupied: true },
+          ],
+          totalActivite: 2450, totalBureau: 549,
+        },
+        {
+          name: "C",
+          cells: [
+            { label: "1-C",    activite: 571, bureau: 30,  occupied: false },
+            { label: "2-C",    activite: 473, bureau: 28,  occupied: false },
+            { label: "C1/C2",  activite: null, bureau: 219, occupied: false },
+          ],
+          totalActivite: 1044, totalBureau: 277,
+        },
+      ],
+      totalActivite: 5428, totalBureau: 1170,
+    },
   },
   "plaisir": {
     id: "plaisir", city: "Plaisir", address: "226 Rue Jacques Monod", cp: "78370", region: "idf", dept: "Yvelines (78)",
@@ -534,6 +573,51 @@ function showDetail(key, updateHash = true) {
     </tr>`;
   }).join('');
 
+  // Detailed per-building / per-cell breakdown (currently only populated for Osny),
+  // rendered instead of the generic tenants table when available.
+  function statusPillHTML(occupied) {
+    return occupied
+      ? `<span style="display:inline-block;padding:3px 10px;font-size:11px;font-weight:500;background:#FEE8E8;color:#C0392B">Occupé</span>`
+      : `<span style="display:inline-block;padding:3px 10px;font-size:11px;font-weight:500;background:#E8F6EE;color:#1A7A44">Disponible</span>`;
+  }
+  const cellDetailHTML = d.cellDetail ? (() => {
+    const rows = d.cellDetail.buildings.map(b => {
+      const cellRows = b.cells.map(c => `
+        <tr class="${c.occupied ? '' : 'vacant-row'}">
+          <td style="font-weight:600">${c.label}</td>
+          <td>${b.name}</td>
+          <td>${c.activite != null ? c.activite + ' m²' : '—'}</td>
+          <td>${c.bureau != null ? c.bureau + ' m²' : '—'}</td>
+          <td>${statusPillHTML(c.occupied)}</td>
+        </tr>`).join('');
+      return `${cellRows}
+        <tr>
+          <td style="font-weight:700">Bât ${b.name}</td>
+          <td style="font-weight:700">${b.name}</td>
+          <td style="font-weight:700">${b.totalActivite} m²</td>
+          <td style="font-weight:700">${b.totalBureau} m²</td>
+          <td></td>
+        </tr>`;
+    }).join('');
+    return `
+      <table class="tenants-table">
+        <thead>
+          <tr>
+            <th>Cellule</th><th>Bâtiment</th><th>Surface activité</th><th>Surface bureau</th><th>Statut</th>
+          </tr>
+        </thead>
+        <tbody>${rows}
+          <tr style="background:var(--dark)">
+            <td style="font-weight:700;color:#fff">Total</td>
+            <td></td>
+            <td style="font-weight:700;color:#fff">${d.cellDetail.totalActivite} m²</td>
+            <td style="font-weight:700;color:#fff">${d.cellDetail.totalBureau} m²</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>`;
+  })() : null;
+
   // Distance items
   const distItems = d.distances.map(dist => `
     <div class="distance-item">
@@ -608,6 +692,7 @@ function showDetail(key, updateHash = true) {
         <div class="pq-section-title">Disponibilités</div>
       </div>
       <div style="overflow-x:auto;margin-bottom:8px">
+        ${cellDetailHTML || `
         <table class="tenants-table">
           <thead>
             <tr>
@@ -615,7 +700,7 @@ function showDetail(key, updateHash = true) {
             </tr>
           </thead>
           <tbody>${tenantsRows}</tbody>
-        </table>
+        </table>`}
       </div>
       <p style="font-size:11px;color:var(--text-muted);margin-bottom:40px;font-weight:400">Conditions de location sur demande. Contactez notre équipe pour les détails.</p>
 

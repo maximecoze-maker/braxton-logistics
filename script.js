@@ -283,6 +283,20 @@ function renderCards(filter) {
     card.className = 'card';
     // Accent bar: black for Urban Pro, teal otherwise
     const accentStyle = isUP ? 'background:#1a1a1a' : '';
+    // Cards for assets with a detail page navigate on click (or Enter/Space) anywhere
+    // on the card; cards with only an external Maps link stay non-clickable as a whole.
+    const openDetail = hasIM ? () => showDetail(a.imKey) : a.upKey ? () => showUPDetail(a.upKey) : null;
+    if (openDetail) {
+      card.tabIndex = 0;
+      card.setAttribute('role', 'button');
+      card.setAttribute('aria-label', `Voir la fiche ${displayCity}`);
+      card.onclick = openDetail;
+      card.onkeydown = (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openDetail(); }
+      };
+    } else {
+      card.style.cursor = 'default';
+    }
     card.innerHTML = `
       <div class="card-accent" style="${accentStyle}"></div>
       <div class="card-body">
@@ -303,10 +317,10 @@ function renderCards(filter) {
             <div class="available-dot"></div><span class="available-label">Disponible</span>
           </div>
           ${hasIM
-            ? `<button type="button" class="card-link" onclick="showDetail('${a.imKey}')">Voir la fiche →</button>`
+            ? `<span class="card-link">Voir la fiche →</span>`
             : a.upKey
-              ? `<button type="button" class="card-link" onclick="showUPDetail('${a.upKey}')">Voir les cellules →</button>`
-              : `<a class="card-link" href="https://www.google.com/maps/search/?api=1&query=${mapsQ}" target="_blank">Voir sur Maps →</a>`
+              ? `<span class="card-link">Voir les cellules →</span>`
+              : `<a class="card-link" href="https://www.google.com/maps/search/?api=1&query=${mapsQ}" target="_blank" onclick="event.stopPropagation()">Voir sur Maps →</a>`
           }
         </div>
       </div>`;

@@ -261,6 +261,45 @@ const assets = [
 ];
 
 // ══════════════════════════════════════
+// UI — animations au scroll + compteurs
+// ══════════════════════════════════════
+const revealObserver = ('IntersectionObserver' in window)
+  ? new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' })
+  : null;
+
+// A appeler apres tout ajout/remplacement d'elements .reveal au DOM (rendu initial,
+// changement de filtre...). Les elements deja observes ne sont pas repris.
+function observeReveals(root = document) {
+  const els = root.querySelectorAll('.reveal:not(.reveal-observed)');
+  els.forEach((el) => {
+    el.classList.add('reveal-observed');
+    if (revealObserver) revealObserver.observe(el);
+    else el.classList.add('is-visible'); // pas de support IntersectionObserver
+  });
+}
+
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function animateCount(el, target) {
+  if (prefersReducedMotion || isNaN(target)) { el.textContent = target; return; }
+  const duration = 1000;
+  const start = performance.now();
+  const step = (now) => {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(eased * target);
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+// ══════════════════════════════════════
 // LISTING
 // ══════════════════════════════════════
 const upLogoSVG = `<img src="urban-pro-icon.png" alt="" class="up-logo-icon" />`;
@@ -273,14 +312,16 @@ function renderCards(filter) {
   else if (filter === 'urbanpro') filtered = assets.filter(a => a.brand === 'urbanpro');
   else filtered = assets.filter(a => a.region === filter);
 
-  filtered.forEach(a => {
+  filtered.forEach((a, i) => {
     const badge = badgeMap[a.region];
     const isUP = a.brand === 'urbanpro';
     const displayCity = a.tag ? `${a.city} — n°${a.tag}` : a.city;
     const mapsQ = encodeURIComponent(`${a.address}, ${a.cp} ${a.city}`);
     const hasIM = !!a.imKey;
     const card = document.createElement('div');
-    card.className = 'card';
+    // Stagger sur les 4 premieres de chaque rangee visuelle (defini en CSS jusqu'a reveal-3),
+    // les suivantes reprennent le meme delai que reveal-3 — inutile d'aller plus loin.
+    card.className = 'card reveal' + (i % 4 ? ` reveal-${Math.min(i % 4, 3)}` : '');
     // Accent bar: black for Urban Pro, teal otherwise
     const accentStyle = isUP ? 'background:#1a1a1a' : '';
     // Cards for assets with a detail page navigate on click (or Enter/Space) anywhere
@@ -327,6 +368,7 @@ function renderCards(filter) {
     grid.appendChild(card);
   });
   document.getElementById('visible-count').textContent = filtered.length;
+  observeReveals(grid);
 }
 
 document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -905,9 +947,11 @@ function initMap() {
 
   const map = L.map('assets-map', { scrollWheelZoom: false, zoomControl: true });
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
-    maxZoom: 18
+  // Carto exige desormais une cle API sur ses tuiles "gratuites" (retournait un tuile
+  // filigranee "API KEY REQUIRED" en 200 OK). OSM reste utilisable sans cle.
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19
   }).addTo(map);
 
   // Custom UP icon
@@ -965,9 +1009,9 @@ function initMap() {
 // ══════════════════════════════════════
 // STATS (dérivées des données, jamais codées en dur)
 // ══════════════════════════════════════
-document.getElementById('stat-total').textContent = assets.length;
-document.getElementById('stat-im').textContent = Object.keys(imAssets).length;
-document.getElementById('stat-up').textContent = Object.keys(upAssets).length;
+animateCount(document.getElementById('stat-total'), assets.length);
+animateCount(document.getElementById('stat-im'), Object.keys(imAssets).length);
+animateCount(document.getElementById('stat-up'), Object.keys(upAssets).length);
 
 // ══════════════════════════════════════
 // ROUTING — liens partageables + bouton précédent du navigateur
@@ -987,3 +1031,7 @@ function routeFromLocation() {
 
 window.addEventListener('popstate', routeFromLocation);
 document.addEventListener('DOMContentLoaded', routeFromLocation);
+
+// Elements .reveal statiques de la page (filtres, section contact...) — les cartes
+// sont deja prises en charge par renderCards() a chaque rendu.
+observeReveals();

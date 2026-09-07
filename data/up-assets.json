@@ -508,7 +508,7 @@
   "bagnolet-up": {
     "cells": [
       {
-        "num": 1,
+        "num": "1 - Vacant",
         "rdc": 66,
         "r1": 66,
         "total": 132,
@@ -517,7 +517,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 2,
+        "num": "2 - Vacant",
         "rdc": 66,
         "r1": 66,
         "total": 132,
@@ -526,7 +526,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 3,
+        "num": "3 - Vacant",
         "rdc": 66,
         "r1": 66,
         "total": 132,
@@ -535,39 +535,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 4,
-        "rdc": 67,
-        "r1": 67,
-        "total": 134,
-        "status": "occupé"
-      },
-      {
-        "num": 5,
-        "rdc": 67,
-        "r1": 67,
-        "total": 134,
-        "status": "vacant",
-        "loyer": 2442,
-        "dispo": "Immédiat"
-      },
-      {
-        "num": 6,
-        "rdc": 66,
-        "r1": 66,
-        "total": 132,
-        "status": "occupé"
-      },
-      {
-        "num": 7,
-        "rdc": 66,
-        "r1": 66,
-        "total": 132,
-        "status": "vacant",
-        "loyer": 2404,
-        "dispo": "Immédiat"
-      },
-      {
-        "num": 8,
+        "num": "4 - Vacant",
         "rdc": 67,
         "r1": 67,
         "total": 134,
@@ -576,7 +544,43 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 9,
+        "num": "5 - Vacant",
+        "rdc": 67,
+        "r1": 67,
+        "total": 134,
+        "status": "vacant",
+        "loyer": 2442,
+        "dispo": "Immédiat"
+      },
+      {
+        "num": "6 - Vacant",
+        "rdc": 66,
+        "r1": 66,
+        "total": 132,
+        "status": "vacant",
+        "loyer": 2420,
+        "dispo": "Immédiat"
+      },
+      {
+        "num": "7 - Vacant",
+        "rdc": 66,
+        "r1": 66,
+        "total": 132,
+        "status": "vacant",
+        "loyer": 2404,
+        "dispo": "Immédiat"
+      },
+      {
+        "num": "8 - Vacant",
+        "rdc": 67,
+        "r1": 67,
+        "total": 134,
+        "status": "vacant",
+        "loyer": 2457,
+        "dispo": "Immédiat"
+      },
+      {
+        "num": "9 - Vacant",
         "rdc": 67,
         "r1": 67,
         "total": 134,
@@ -589,17 +593,21 @@
         "rdc": 66,
         "r1": 66,
         "total": 132,
-        "status": "occupé"
+        "status": "vacant",
+        "loyer": 2415,
+        "dispo": "Immédiat"
       },
       {
-        "num": 11,
+        "num": "11 - SYMTECH",
         "rdc": 66,
         "r1": 66,
         "total": 132,
-        "status": "occupé"
+        "status": "vacant",
+        "loyer": 2402,
+        "dispo": "Immédiat"
       },
       {
-        "num": 12,
+        "num": "12 - Vacant",
         "rdc": 67,
         "r1": 67,
         "total": 134,
@@ -608,21 +616,25 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 13,
+        "num": "13 - H MOBILITIES",
         "rdc": 64,
         "r1": 64,
         "total": 128,
-        "status": "occupé"
+        "status": "vacant",
+        "loyer": 2360,
+        "dispo": "Immédiat"
       },
       {
-        "num": 14,
+        "num": "14 - VENUS",
         "rdc": 65,
         "r1": 65,
         "total": 130,
-        "status": "occupé"
+        "status": "vacant",
+        "loyer": 2393,
+        "dispo": "Immédiat"
       },
       {
-        "num": 15,
+        "num": "15 - Vacant",
         "rdc": 65,
         "r1": 65,
         "total": 130,
@@ -631,7 +643,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 16,
+        "num": "16 - Vacant",
         "rdc": 66,
         "r1": 66,
         "total": 132,
@@ -640,21 +652,25 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 17,
+        "num": "17 - La Maudainnerie",
         "rdc": 64,
         "r1": 64,
         "total": 128,
-        "status": "occupé"
+        "status": "vacant",
+        "loyer": 2352,
+        "dispo": "Immédiat"
       },
       {
-        "num": 18,
+        "num": "18 - Vacant",
         "rdc": 89,
         "r1": 89,
         "total": 178,
-        "status": "occupé"
+        "status": "vacant",
+        "loyer": 3265,
+        "dispo": "Immédiat"
       },
       {
-        "num": 19,
+        "num": "19 - Vacant",
         "rdc": 88,
         "r1": 88,
         "total": 176,
@@ -663,7 +679,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 20,
+        "num": "20 - Vacant",
         "rdc": 88,
         "r1": 88,
         "total": 176,
@@ -672,7 +688,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 21,
+        "num": "21 - Vacant",
         "rdc": 90,
         "r1": 90,
         "total": 180,
@@ -681,7 +697,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 22,
+        "num": "22 - Vacant",
         "rdc": 89,
         "r1": 89,
         "total": 178,
@@ -690,7 +706,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 23,
+        "num": "23 - Vacant",
         "rdc": 89,
         "r1": 89,
         "total": 178,
@@ -699,14 +715,16 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 24,
+        "num": "24 - NOHISAC",
         "rdc": 87,
         "r1": 87,
         "total": 174,
-        "status": "occupé"
+        "status": "vacant",
+        "loyer": 3184,
+        "dispo": "Immédiat"
       },
       {
-        "num": 25,
+        "num": "25 - Vacant",
         "rdc": 90,
         "r1": 90,
         "total": 180,
@@ -715,7 +733,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 26,
+        "num": "26 - Vacant",
         "rdc": 89,
         "r1": 89,
         "total": 178,
@@ -724,7 +742,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 27,
+        "num": "27 - Vacant",
         "rdc": 89,
         "r1": 89,
         "total": 178,
@@ -733,7 +751,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 28,
+        "num": "28 - Vacant",
         "rdc": 89,
         "r1": 89,
         "total": 178,
@@ -742,7 +760,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 29,
+        "num": "29 - Vacant",
         "rdc": 90,
         "r1": 90,
         "total": 180,
@@ -751,7 +769,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 30,
+        "num": "30 - Vacant",
         "rdc": 87,
         "r1": 87,
         "total": 174,
@@ -760,7 +778,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 31,
+        "num": "31 - Vacant",
         "rdc": 89,
         "r1": 89,
         "total": 178,
@@ -771,224 +789,7 @@
     ]
   },
   "neuilly-up": {
-    "cells": [
-      {
-        "num": 1,
-        "rdc": 384,
-        "r1": 384,
-        "total": 768,
-        "status": "occupé"
-      },
-      {
-        "num": 1,
-        "rdc": 165,
-        "r1": 165,
-        "total": 330,
-        "status": "occupé"
-      },
-      {
-        "num": 2,
-        "rdc": 80,
-        "r1": 80,
-        "total": 160,
-        "status": "occupé"
-      },
-      {
-        "num": 3,
-        "rdc": 80,
-        "r1": 80,
-        "total": 160,
-        "status": "occupé"
-      },
-      {
-        "num": 4,
-        "rdc": 165,
-        "r1": 165,
-        "total": 330,
-        "status": "occupé"
-      },
-      {
-        "num": 5,
-        "rdc": 80,
-        "r1": 80,
-        "total": 160,
-        "status": "occupé"
-      },
-      {
-        "num": 6,
-        "rdc": 253,
-        "r1": 253,
-        "total": 506,
-        "status": "vacant",
-        "loyer": 5260,
-        "dispo": "Immédiat"
-      },
-      {
-        "num": 7,
-        "rdc": 80,
-        "r1": 80,
-        "total": 160,
-        "status": "occupé"
-      },
-      {
-        "num": 8,
-        "rdc": 210,
-        "r1": 210,
-        "total": 420,
-        "status": "occupé"
-      },
-      {
-        "num": 9,
-        "rdc": 80,
-        "r1": 80,
-        "total": 160,
-        "status": "vacant",
-        "loyer": 1933,
-        "dispo": "Immédiat"
-      },
-      {
-        "num": 10,
-        "rdc": 81,
-        "r1": 81,
-        "total": 162,
-        "status": "occupé"
-      },
-      {
-        "num": 11,
-        "rdc": 81,
-        "r1": 81,
-        "total": 162,
-        "status": "occupé"
-      },
-      {
-        "num": 12,
-        "rdc": 79,
-        "r1": 79,
-        "total": 158,
-        "status": "occupé"
-      },
-      {
-        "num": 14,
-        "rdc": 80,
-        "r1": 80,
-        "total": 160,
-        "status": "vacant",
-        "loyer": 298,
-        "dispo": "Immédiat"
-      },
-      {
-        "num": 15,
-        "rdc": 80,
-        "r1": 80,
-        "total": 160,
-        "status": "occupé"
-      },
-      {
-        "num": 16,
-        "rdc": 80,
-        "r1": 80,
-        "total": 160,
-        "status": "vacant",
-        "loyer": 1921,
-        "dispo": "Immédiat"
-      },
-      {
-        "num": 17,
-        "rdc": 79,
-        "r1": 79,
-        "total": 158,
-        "status": "vacant",
-        "loyer": 1897,
-        "dispo": "Immédiat"
-      },
-      {
-        "num": 18,
-        "rdc": 79,
-        "r1": 79,
-        "total": 158,
-        "status": "vacant",
-        "loyer": 1909,
-        "dispo": "Immédiat"
-      },
-      {
-        "num": 19,
-        "rdc": 79,
-        "r1": 79,
-        "total": 158,
-        "status": "occupé"
-      },
-      {
-        "num": 20,
-        "rdc": 79,
-        "r1": 79,
-        "total": 158,
-        "status": "vacant",
-        "loyer": 1909,
-        "dispo": "Immédiat"
-      },
-      {
-        "num": 21,
-        "rdc": 79,
-        "r1": 79,
-        "total": 158,
-        "status": "vacant",
-        "loyer": 1909,
-        "dispo": "Immédiat"
-      },
-      {
-        "num": 22,
-        "rdc": 79,
-        "r1": 79,
-        "total": 158,
-        "status": "occupé"
-      },
-      {
-        "num": 23,
-        "rdc": 79,
-        "r1": 79,
-        "total": 158,
-        "status": "vacant",
-        "loyer": 1909,
-        "dispo": "Immédiat"
-      },
-      {
-        "num": 24,
-        "rdc": 79,
-        "r1": 79,
-        "total": 158,
-        "status": "occupé"
-      },
-      {
-        "num": 25,
-        "rdc": 79,
-        "r1": 79,
-        "total": 158,
-        "status": "occupé"
-      },
-      {
-        "num": 26,
-        "rdc": 80,
-        "r1": 80,
-        "total": 160,
-        "status": "vacant",
-        "loyer": 1930,
-        "dispo": "Immédiat"
-      },
-      {
-        "num": 27,
-        "rdc": 73,
-        "r1": 73,
-        "total": 146,
-        "status": "occupé"
-      },
-      {
-        "num": 28,
-        "rdc": 80,
-        "r1": 80,
-        "total": 160,
-        "status": "occupé"
-      }
-    ]
+    "cells": []
   },
   "morangis-up": {
     "cells": [
@@ -1602,7 +1403,7 @@
   "gradignan-up": {
     "cells": [
       {
-        "num": 1,
+        "num": "1 - Vacant",
         "rdc": 64,
         "r1": 64,
         "total": 128,
@@ -1611,7 +1412,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 2,
+        "num": "2 - Vacant",
         "rdc": 65,
         "r1": 65,
         "total": 130,
@@ -1620,7 +1421,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 3,
+        "num": "3 - Vacant",
         "rdc": 65,
         "r1": 65,
         "total": 130,
@@ -1629,7 +1430,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 4,
+        "num": "4 - Vacant",
         "rdc": 65,
         "r1": 65,
         "total": 130,
@@ -1638,7 +1439,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 5,
+        "num": "5 - Vacant",
         "rdc": 65,
         "r1": 65,
         "total": 130,
@@ -1647,7 +1448,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 6,
+        "num": "6 - Vacant",
         "rdc": 65,
         "r1": 65,
         "total": 130,
@@ -1656,7 +1457,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 7,
+        "num": "7 - Vacant",
         "rdc": 65,
         "r1": 65,
         "total": 130,
@@ -1665,7 +1466,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 8,
+        "num": "8 - Vacant",
         "rdc": 65,
         "r1": 65,
         "total": 130,
@@ -1674,7 +1475,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 9,
+        "num": "9 - Vacant",
         "rdc": 64,
         "r1": 64,
         "total": 128,
@@ -1683,7 +1484,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 10,
+        "num": "10 - Vacant",
         "rdc": 64,
         "r1": 64,
         "total": 128,
@@ -1692,7 +1493,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 11,
+        "num": "11 - Vacant",
         "rdc": 65,
         "r1": 65,
         "total": 130,
@@ -1701,7 +1502,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 12,
+        "num": "12 - Vacant",
         "rdc": 65,
         "r1": 65,
         "total": 130,
@@ -1710,7 +1511,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 13,
+        "num": "13 - Vacant",
         "rdc": 65,
         "r1": 65,
         "total": 130,
@@ -1719,7 +1520,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 14,
+        "num": "14 - Vacant",
         "rdc": 65,
         "r1": 65,
         "total": 130,
@@ -1728,7 +1529,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 15,
+        "num": "15 - Vacant",
         "rdc": 65,
         "r1": 65,
         "total": 130,
@@ -1737,7 +1538,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 16,
+        "num": "16 - Vacant",
         "rdc": 65,
         "r1": 65,
         "total": 130,
@@ -1746,7 +1547,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 17,
+        "num": "17 - Vacant",
         "rdc": 65,
         "r1": 65,
         "total": 130,
@@ -1755,7 +1556,7 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 18,
+        "num": "18 - Vacant",
         "rdc": 65,
         "r1": 65,
         "total": 130,
@@ -1764,11 +1565,13 @@
         "dispo": "Immédiat"
       },
       {
-        "num": 19,
+        "num": "19 ACOUSMATE",
         "rdc": 64,
         "r1": 64,
         "total": 128,
-        "status": "occupé"
+        "status": "vacant",
+        "loyer": 1376,
+        "dispo": "Immédiat"
       }
     ]
   }
